@@ -1,0 +1,215 @@
+{
+  "main": {
+    "id": "6ec057e6550c789a",
+    "type": "split",
+    "children": [
+      {
+        "id": "6fd83003c7bd0c2f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c2e885529a1c687c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "CRONOS--HTB[Medium].md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "CRONOS--HTB[Medium]"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "27a9cbe1c9dcd10b",
+    "type": "split",
+    "children": [
+      {
+        "id": "d5f5e31f25e3b824",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "883f3b2b49ea67dd",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Explorador de archivos"
+            }
+          },
+          {
+            "id": "b1949639db917528",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Buscar"
+            }
+          },
+          {
+            "id": "1cffb3e31dffd6de",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Marcadores"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "5d569869721611ce",
+    "type": "split",
+    "children": [
+      {
+        "id": "aba9cef90fc348ab",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "98805d4142eabc2b",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "CRONOS--HTB[Medium].md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": true,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Enlaces entrantes de CRONOS--HTB[Medium]"
+            }
+          },
+          {
+            "id": "99bc59c3074ea9c6",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "CRONOS--HTB[Medium].md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Enlaces salientes de CRONOS--HTB[Medium]"
+            }
+          },
+          {
+            "id": "3b3db81cf0230748",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Etiquetas"
+            }
+          },
+          {
+            "id": "e14030a0fcff9b7d",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "Todas las propiedades"
+            }
+          },
+          {
+            "id": "1cd0fb36916b8dd6",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "CRONOS--HTB[Medium].md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Esquema de CRONOS--HTB[Medium]"
+            }
+          },
+          {
+            "id": "a5b04feb9079eb08",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
+          }
+        ],
+        "currentTab": 5
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Abrir selector rápido": false,
+      "graph:Abrir vista gráfica": false,
+      "canvas:Crear nuevo lienzo": false,
+      "daily-notes:Abrir la nota de hoy": false,
+      "templates:Insertar plantilla": false,
+      "command-palette:Abrir paleta de comandos": false,
+      "bases:Crear nueva base": false,
+      "obsidian-git:Open Git source control": false
+    }
+  },
+  "active": "c2e885529a1c687c",
+  "lastOpenFiles": [
+    "Pasted image 20260422164834.png",
+    "CRONOS--HTB[Medium].md",
+    "Pasted image 20260422163821.png",
+    "README.md",
+    "Pasted image 20260422154054.png",
+    "Sin título.base",
+    "git view.md",
+    "Sin título.canvas",
+    "Pasted image 20260422163713.png",
+    "Pasted image 20260422163019.png",
+    "Pasted image 20260422162403.png",
+    "Pasted image 20260422161456.png",
+    "Pasted image 20260422154805.png",
+    "Pasted image 20260422154246.png",
+    "Pasted image 20260422154144.png"
+  ]
+}
