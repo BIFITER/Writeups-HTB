@@ -68,8 +68,7 @@ nano /etc/hosts
 
 En la página encontramos que el login es vulnerable a SQLi
 
-![Login.png](https://github.com/BIFITER/IM-GENES/blob/e67b27c0afa20f9815ebcf907aa1b7a9c606e512/Login.png)
-
+![Login.png|84]([https://github.com/BIFITER/IM-GENES/blob/main/Login.png](https://github.com/BIFITER/IM-GENES/blob/e67b27c0afa20f9815ebcf907aa1b7a9c606e512/Burpsuite1.png))
 Después de ese login entraremos a una herramienta web para la red con opción de traceroute y ping
 
 ![Net_tool.png](https://github.com/BIFITER/IM-GENES/blob/e67b27c0afa20f9815ebcf907aa1b7a9c606e512/Net_tool.png)
