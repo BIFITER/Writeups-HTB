@@ -68,7 +68,7 @@ nano /etc/hosts
 
 En la página encontramos que el login es vulnerable a SQLi
 
-![](obsidian://open?vault=Writeups-HTB&file=Login.png)
+![Imagen Login](Login.png)
 
 Después de ese login entraremos a una herramienta web para la red con opción de traceroute y ping
 
