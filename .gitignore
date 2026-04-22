@@ -1,10 +1,12 @@
 <<<<<<< HEAD
 .obsidian/workspace.json
 /.obsidian
+=======
 *.png
 *.jpg
 *.gif
-=======
-
-
+.obsidian
+.gitignore
 >>>>>>> origin/main
+
+//
