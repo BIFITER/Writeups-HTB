@@ -1,2 +1,8 @@
+<<<<<<< HEAD
 .obsidian/workspace.json
 /.obsidian
+=======
+*.png
+*.jpg
+*.gif
+>>>>>>> origin/main
