@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CRONOS--HTB[Medium].md",
+                "file": "README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "CRONOS--HTB[Medium]"
+              "title": "README"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CRONOS--HTB[Medium].md",
+                "file": "README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Enlaces entrantes de CRONOS--HTB[Medium]"
+              "title": "Enlaces entrantes de README"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "CRONOS--HTB[Medium].md",
+                "file": "README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Enlaces salientes de CRONOS--HTB[Medium]"
+              "title": "Enlaces salientes de README"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "CRONOS--HTB[Medium].md",
+                "file": "README.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Esquema de CRONOS--HTB[Medium]"
+              "title": "Esquema de README"
             }
           },
           {
@@ -196,19 +196,19 @@
   },
   "active": "c2e885529a1c687c",
   "lastOpenFiles": [
+    "Burpsuite1.png",
+    "README.md",
+    "Burpsuite2.png",
+    "EscaladaPrivs.png",
+    "EscaladaPrivs1.png",
+    "Login.png",
+    "Vulnerabilidad1.png",
     "UserTXT.png",
     "RootTXT.png",
-    "EscaladaPrivs1.png",
-    "EscaladaPrivs.png",
     "Rev_Shell1.png",
-    "Burpsuite2.png",
-    "Burpsuite1.png",
-    "Vulnerabilidad1.png",
     "Net_tool.png",
     "CRONOS--HTB[Medium].md",
-    "Login.png",
     "Pasted.md",
-    "README.md",
     "Sin título.base",
     "git view.md",
     "Sin título.canvas"
