@@ -63,17 +63,19 @@ Investigamos y vemos que tiene varios exploits, procederé a usar este https://w
 
 ![](Pasted%20image%2020260423175849.png) 
 
-Para el exploit debemos crear una base de datos nueva en mi caso la llamaré hack.php
-![](Pasted%20image%2020260423181228.png)
+Para el exploit debemos renonmbrar la base de datos, en mi caso la llamaré ninevehNotes.php
+![](Pasted%20image%2020260423190525.png)
 
-Una vez creado debemos hacer una tabla nueva
+Una vez creado debemos hacer una tabla nueva 
+
 ![](Pasted%20image%2020260423181506.png)
 
-![](Pasted%20image%2020260423181815.png) 
+
+![](Pasted%20image%2020260423190633.png)
 
 
 Vemos que la base de datos está en el directorio /var/tmp
-![](Pasted%20image%2020260423181840.png) 
+![](Pasted%20image%2020260423190525.png) 
 
 ### HTTP
 Mediante una pequeña trampa podemos saber que el usuario que acepta te indica si es válido o no 
@@ -97,6 +99,53 @@ Al darle al apartado de Notas veremos que tenemos una vulnerabilidad de LFI la c
 ![](Pasted%20image%2020260423183352.png) 
 
 
-Ya que sabíamos previamente donde está la base de datos porque lo habíamos visto procederemos ponerlo.
-![](Pasted%20image%2020260423183506.png) 
+Ya que sabíamos previamente donde está la base de datos porque lo habíamos visto procederemos ponerlo.  Y probamos el exploit y veremos que correctamente nos ha funcionado. Ahora procederemos a conseguir una reverse shell en nuestro sistema.
+ ![](Pasted%20image%2020260423190738.png)
+
+Pillamos la petición mediante burpsuite y cambiamos el método de esta a POST
+![](Pasted%20image%2020260423191114.png) 
+
+Y lo cambiamos para tener iniciar la reverse shell, enviamos y esperamos. 
+
+![](Pasted%20image%2020260423191403.png) 
+
+Habremos entrado al sistema exitosamente
+
+![](Pasted%20image%2020260423191513.png) 
+
+Investigamos las carpetas y entramos a ssl 
+
+![](Pasted%20image%2020260423191742.png)
+
+Entramos a secure_notes y vemos un png en el cual hacemos el comando strings, lo cuál nos muestra una private key de ssh del usuario amorois. 
+
+![](Pasted%20image%2020260423192016.png)
+
+Sabemos que no tenía abierto ssh en el  escaneo previo así que investigo sus puertos abiertos y descubro que tiene un puerto 22 abierto
+![](Pasted%20image%2020260423192233.png) 
+
+Como no tiene ssh veremos los programas que tiene desde /etc/init.d y comprobamos que está usando knockd que es un programa que sirve para ocultar algún puerto para mayor seguridad.
+![](Pasted%20image%2020260423192747.png) 
+
+En el fichero propio de configuración podemos comprobar que tiene bloqueado el puerto 22, así que debemos jugar con la secuencia dada para abrir el puerto.
+![](Pasted%20image%2020260423193024.png) 
+
+Usaremos la propia herramienta y simplemente poniendo la secuencia podremos comprobar que se ha abierto el puerto 22 del ssh.
+![](Pasted%20image%2020260423193434.png) 
+
+
+Así que ahora simplemente con la clave privada previamente copiada la usaremos para iniciar sesión en ssh con el usuario amrois
+
+![](Pasted%20image%2020260423193647.png) 
+
+Ya dentro podemos acceder a la primera flag de user.txt
+![](Pasted%20image%2020260423193958.png)
+
+Comprobando el crontab veremos que hay un proceso ejecutandose por el root llamado report-reset.sh
+
+![](Pasted%20image%2020260423194045.png) 
+
+Así que lo configuraremos para escalar privilegios como root
+
+![](Pasted%20image%2020260423194448.png) 
 

