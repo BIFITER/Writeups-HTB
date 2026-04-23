@@ -8,21 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "c2e885529a1c687c",
-            "type": "leaf",
-            "state": {
-              "type": "split-diff-view",
-              "state": {
-                "aFile": ".gitignore",
-                "bFile": ".gitignore",
-                "aRef": "HEAD",
-                "bRef": ""
-              },
-              "icon": "diff",
-              "title": "Diff: .gitignore  (Index)"
-            }
-          },
-          {
             "id": "e56aac5c65f07d89",
             "type": "leaf",
             "state": {
@@ -36,8 +21,7 @@
               "title": "CRONOS--HTB[Medium]"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -212,8 +196,8 @@
   },
   "active": "e56aac5c65f07d89",
   "lastOpenFiles": [
-    "EscaladaPrivs.png",
     "CRONOS--HTB[Medium].md",
+    "EscaladaPrivs.png",
     "EscaladaPrivs1.png",
     "Login.png",
     "Net_tool.png",
