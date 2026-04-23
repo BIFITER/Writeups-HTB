@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CRONOS--HTB[Medium].md",
+                "file": "Nineveh--HTB[Medium].md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "CRONOS--HTB[Medium]"
+              "title": "Nineveh--HTB[Medium]"
             }
           }
         ]
@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "5d569869721611ce",
@@ -196,20 +197,21 @@
   },
   "active": "e56aac5c65f07d89",
   "lastOpenFiles": [
+    "Pasted image 20260423175849.png",
+    "Pasted image 20260423175747.png",
+    "Pasted image 20260423175642.png",
+    "Pasted image 20260423175051.png",
+    "Pasted image 20260423175008.png",
     "CRONOS--HTB[Medium].md",
+    "Nineveh--HTB[Medium].md",
+    "Pasted image 20260423174757.png",
+    "Pasted image 20260423174644.png",
     "EscaladaPrivs.png",
     "EscaladaPrivs1.png",
     "Login.png",
     "Net_tool.png",
     "README.md",
-    "Vulnerabilidad1.png",
-    "UserTXT.png",
-    "RootTXT.png",
-    "Rev_Shell1.png",
-    "Burpsuite2.png",
-    "Burpsuite1.png",
     "conflict-files-obsidian-git.md",
-    "Sin título.md",
     "Pasted.md",
     "Sin título.base",
     "git view.md",
