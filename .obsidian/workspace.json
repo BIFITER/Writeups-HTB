@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "SENSE/Sense--HTB[Easy].md",
+                "file": "CRONOS/CRONOS--HTB[Medium].md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Sense--HTB[Easy]"
+              "title": "CRONOS--HTB[Medium]"
             }
           }
         ]
@@ -196,12 +196,12 @@
   },
   "active": "d2e12d55d0a9e073",
   "lastOpenFiles": [
+    "SENSE/Sense--HTB[Easy].md",
     "SENSE/SCRIPT PYTHON CAMBIADO.md",
     "NINEVEH/Nineveh--HTB[Medium].md",
     "Img/Pasted image 20260424162705.png",
     "NINEVEH",
     "Img/Pasted image 20260424183920.png",
-    "SENSE/Sense--HTB[Easy].md",
     "SENSE",
     "CRONOS",
     "Img/Pasted image 20260424180446.png",
