@@ -11,14 +11,12 @@
             "id": "d2e12d55d0a9e073",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "SENSE/Sense--HTB[Easy].md",
-                "mode": "source",
-                "source": false
+                "file": "img/Rev_Shell1.png"
               },
-              "icon": "lucide-file",
-              "title": "Sense--HTB[Easy]"
+              "icon": "lucide-image",
+              "title": "Rev_Shell1"
             }
           }
         ]
@@ -196,8 +194,10 @@
   },
   "active": "883f3b2b49ea67dd",
   "lastOpenFiles": [
-    "SENSE/SCRIPT PYTHON AJUSTADO.md",
+    "img/Burpsuite1.png",
+    "img",
     "SENSE/Sense--HTB[Easy].md",
+    "SENSE/SCRIPT PYTHON AJUSTADO.md",
     "CRONOS/CRONOS--HTB[Medium].md",
     "Sense--HTB[Easy.md",
     "conflict-files-obsidian-git.md",
