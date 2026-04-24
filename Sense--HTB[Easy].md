@@ -24,4 +24,18 @@ Y en el txt previamente enumerado podemos ver que han mitigado 2 vulnerabilidade
 ![](Pasted%20image%2020260424162418.png)
 
 Al hacerle fuzzing podemos ver que hay muchos más directorios que pueden ser interesantes, los cuáles vamos a enumerar para ver si tienen algún tipo de fichero importante.
-![](Pasted%20image%2020260424162705.png)
+![](Pasted%20image%2020260424162705.png) 
+
+Después de otra enumeración con un diccionario más grande  y buscando extensiones encuentro un fichero txt interesante que es system-users.txt que al acceder veremos cuales son las credenciales para logearnos.
+```bash
+gobuster dir --url https://10.129.24.14/ --wordlist /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt --no-tls-validation -x php,txt -t 100
+```
+![](Pasted%20image%2020260424173143.png) 
+
+![](Pasted%20image%2020260424173202.png)
+
+Así que probaré el usuario más la contraseña default de la aplicación Pfsense que suele ser el mismo nombre "pfsense". Y ya estamos dentro del panel de control.
+
+![](Pasted%20image%2020260424173406.png) 
+
+
