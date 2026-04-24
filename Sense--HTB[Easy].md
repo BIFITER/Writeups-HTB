@@ -38,4 +38,6 @@ Así que probaré el usuario más la contraseña default de la aplicación Pfsen
 
 ![](Pasted%20image%2020260424173406.png) 
 
+Podemos observar que es la versión 2.1.3 la cuál buscando encontré este script https://www.exploit-db.com/exploits/43560 que no me funcionó, así que use este otro que es sobre la misma vulnerabilidad que tiene que ver con status_rrd_graph_img.php https://www.exploit-db.com/exploits/39709. Debemos interceptar la petición hacia el fichero php.
 
+![](Pasted%20image%2020260424180446.png)
