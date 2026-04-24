@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "NINEVEH/Nineveh--HTB[Medium].md",
+                "file": "CRONOS/CRONOS--HTB[Medium].md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Nineveh--HTB[Medium]"
+              "title": "CRONOS--HTB[Medium]"
             }
           }
         ]
@@ -196,6 +196,7 @@
   },
   "active": "d2e12d55d0a9e073",
   "lastOpenFiles": [
+    "NINEVEH/Nineveh--HTB[Medium].md",
     "SENSE/Sense--HTB[Easy].md",
     "img/Rev_Shell1.png",
     "img/Vulnerabilidad1.png",
@@ -206,7 +207,6 @@
     "img",
     "Sense--HTB[Easy.md",
     "conflict-files-obsidian-git.md",
-    "NINEVEH/Nineveh--HTB[Medium].md",
     "img/Pasted image 20260424162705.png",
     "NINEVEH",
     "img/Pasted image 20260424183920.png",
