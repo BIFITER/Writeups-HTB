@@ -13,10 +13,10 @@
             "state": {
               "type": "image",
               "state": {
-                "file": "Burpsuite1.png"
+                "file": "img/Rev_Shell1.png"
               },
               "icon": "lucide-image",
-              "title": "Burpsuite1"
+              "title": "Rev_Shell1"
             }
           }
         ]
@@ -194,26 +194,28 @@
   },
   "active": "883f3b2b49ea67dd",
   "lastOpenFiles": [
+    "img/Vulnerabilidad1.png",
+    "img/Burpsuite1.png",
+    "img",
     "SENSE/Sense--HTB[Easy].md",
     "SENSE/SCRIPT PYTHON AJUSTADO.md",
     "CRONOS/CRONOS--HTB[Medium].md",
-    "Rev_Shell1.png",
-    "Burpsuite1.png",
+    "img/Rev_Shell1.png",
     "img",
     "Sense--HTB[Easy.md",
     "conflict-files-obsidian-git.md",
     "NINEVEH/Nineveh--HTB[Medium].md",
-    "Pasted image 20260424162705.png",
+    "img/Pasted image 20260424162705.png",
     "NINEVEH",
-    "Pasted image 20260424183920.png",
+    "img/Pasted image 20260424183920.png",
     "SENSE",
     "CRONOS",
-    "Pasted image 20260424180446.png",
-    "Pasted image 20260424173406.png",
-    "Pasted image 20260424173202.png",
-    "Pasted image 20260424173143.png",
-    "Pasted image 20260424162024.png",
-    "Pasted image 20260424162418.png",
+    "img/Pasted image 20260424180446.png",
+    "img/Pasted image 20260424173406.png",
+    "img/Pasted image 20260424173202.png",
+    "img/Pasted image 20260424173143.png",
+    "img/Pasted image 20260424162024.png",
+    "img/Pasted image 20260424162418.png",
     "README.md",
     "img",
     "Pasted.md",
