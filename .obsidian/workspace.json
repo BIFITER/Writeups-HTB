@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CRONOS--HTB[Medium].md",
+                "file": "Sense--HTB[Easy].md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "CRONOS--HTB[Medium]"
+              "title": "Sense--HTB[Easy]"
             }
           }
         ]
@@ -194,12 +194,13 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "883f3b2b49ea67dd",
+  "active": "551d497fc3fa5b5c",
   "lastOpenFiles": [
     "Nineveh--HTB[Medium].md",
+    "Sense--HTB[Easy].md",
+    "CRONOS--HTB[Medium].md",
     "Img/UserTXT.png",
     "Img/Vulnerabilidad1.png",
-    "Sin título.md",
     "Img/RootTXT.png",
     "Img/Rev_Shell1.png",
     "README.md",
@@ -210,7 +211,6 @@
     "Img/Pasted image 20260423200905.png",
     "Img/Pasted image 20260423200833.png",
     "Img/Pasted image 20260423200654.png",
-    "CRONOS--HTB[Medium].md",
     "conflict-files-obsidian-git.md",
     "Pasted.md",
     "Sin título.base",
