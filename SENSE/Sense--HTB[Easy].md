@@ -24,7 +24,7 @@ Y en el txt previamente enumerado podemos ver que han mitigado 2 vulnerabilidade
 ![](/img/Pasted%20image%2020260424162418.png)
 
 Al hacerle fuzzing podemos ver que hay muchos más directorios que pueden ser interesantes, los cuáles vamos a enumerar para ver si tienen algún tipo de fichero importante.
-![](/img/Pasted%20image%2020260424162705.png) 
+![](/Img/Pasted%20image%2020260424162705.png) 
 
 Después de otra enumeración con un diccionario más grande  y buscando extensiones encuentro un fichero txt interesante que es system-users.txt que al acceder veremos cuales son las credenciales para logearnos.
 ```bash
