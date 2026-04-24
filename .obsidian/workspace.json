@@ -8,31 +8,20 @@
         "type": "tabs",
         "children": [
           {
-            "id": "551d497fc3fa5b5c",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Img/Pasted image 20260424183920.png"
-              },
-              "icon": "lucide-image",
-              "title": "Pasted image 20260424183920"
-            }
-          },
-          {
             "id": "d2e12d55d0a9e073",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "Img/Pasted image 20260424162705.png"
+                "file": "SENSE/Sense--HTB[Easy].md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "Pasted image 20260424162705"
+              "icon": "lucide-file",
+              "title": "Sense--HTB[Easy]"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -205,22 +194,22 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "883f3b2b49ea67dd",
+  "active": "d2e12d55d0a9e073",
   "lastOpenFiles": [
+    "SENSE/SCRIPT PYTHON CAMBIADO.md",
+    "NINEVEH/Nineveh--HTB[Medium].md",
+    "Img/Pasted image 20260424162705.png",
     "NINEVEH",
     "Img/Pasted image 20260424183920.png",
     "SENSE/Sense--HTB[Easy].md",
-    "SENSE/SCRIPT PYTHON CAMBIADO.md",
     "SENSE",
     "CRONOS",
     "Img/Pasted image 20260424180446.png",
     "Img/Pasted image 20260424173406.png",
     "Img/Pasted image 20260424173202.png",
     "Img/Pasted image 20260424173143.png",
-    "Img/Pasted image 20260424162705.png",
     "Img/Pasted image 20260424162024.png",
     "CRONOS/CRONOS--HTB[Medium].md",
-    "NINEVEH/Nineveh--HTB[Medium].md",
     "Img/Pasted image 20260424162418.png",
     "Img/Pasted image 20260424162328.png",
     "Img/Pasted image 20260424161528.png",
