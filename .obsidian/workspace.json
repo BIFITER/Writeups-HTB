@@ -11,14 +11,12 @@
             "id": "d2e12d55d0a9e073",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "SENSE/Sense--HTB[Easy].md",
-                "mode": "source",
-                "source": false
+                "file": "Burpsuite1.png"
               },
-              "icon": "lucide-file",
-              "title": "Sense--HTB[Easy]"
+              "icon": "lucide-image",
+              "title": "Burpsuite1"
             }
           }
         ]
@@ -194,28 +192,28 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "d2e12d55d0a9e073",
+  "active": "883f3b2b49ea67dd",
   "lastOpenFiles": [
+    "SENSE/Sense--HTB[Easy].md",
     "SENSE/SCRIPT PYTHON AJUSTADO.md",
     "CRONOS/CRONOS--HTB[Medium].md",
-    "img/Rev_Shell1.png",
-    "img/Burpsuite1.png",
+    "Rev_Shell1.png",
+    "Burpsuite1.png",
     "img",
-    "SENSE/Sense--HTB[Easy].md",
     "Sense--HTB[Easy.md",
     "conflict-files-obsidian-git.md",
     "NINEVEH/Nineveh--HTB[Medium].md",
-    "img/Pasted image 20260424162705.png",
+    "Pasted image 20260424162705.png",
     "NINEVEH",
-    "img/Pasted image 20260424183920.png",
+    "Pasted image 20260424183920.png",
     "SENSE",
     "CRONOS",
-    "img/Pasted image 20260424180446.png",
-    "img/Pasted image 20260424173406.png",
-    "img/Pasted image 20260424173202.png",
-    "img/Pasted image 20260424173143.png",
-    "img/Pasted image 20260424162024.png",
-    "img/Pasted image 20260424162418.png",
+    "Pasted image 20260424180446.png",
+    "Pasted image 20260424173406.png",
+    "Pasted image 20260424173202.png",
+    "Pasted image 20260424173143.png",
+    "Pasted image 20260424162024.png",
+    "Pasted image 20260424162418.png",
     "README.md",
     "img",
     "Pasted.md",
