@@ -11,12 +11,14 @@
             "id": "d2e12d55d0a9e073",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "img/Rev_Shell1.png"
+                "file": "NINEVEH/Nineveh--HTB[Medium].md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "Rev_Shell1"
+              "icon": "lucide-file",
+              "title": "Nineveh--HTB[Medium]"
             }
           }
         ]
@@ -192,15 +194,15 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "883f3b2b49ea67dd",
+  "active": "d2e12d55d0a9e073",
   "lastOpenFiles": [
+    "SENSE/Sense--HTB[Easy].md",
+    "img/Rev_Shell1.png",
     "img/Vulnerabilidad1.png",
     "img/Burpsuite1.png",
     "img",
-    "SENSE/Sense--HTB[Easy].md",
     "SENSE/SCRIPT PYTHON AJUSTADO.md",
     "CRONOS/CRONOS--HTB[Medium].md",
-    "img/Rev_Shell1.png",
     "img",
     "Sense--HTB[Easy.md",
     "conflict-files-obsidian-git.md",
@@ -215,7 +217,6 @@
     "img/Pasted image 20260424173202.png",
     "img/Pasted image 20260424173143.png",
     "img/Pasted image 20260424162024.png",
-    "img/Pasted image 20260424162418.png",
     "README.md",
     "img",
     "Pasted.md",
