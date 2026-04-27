@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "NINEVEH/Nineveh--HTB[Medium].md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "Nineveh--HTB[Medium]"
             }
           }
         ]
@@ -196,13 +196,13 @@
   },
   "active": "da464643a3068b6e",
   "lastOpenFiles": [
+    "README.md",
     "SENSE/Sense--HTB[Easy].md",
     "CRONOS/CRONOS--HTB[Medium].md",
     "SENSE/SCRIPT PYTHON AJUSTADO.md",
     "NINEVEH/Nineveh--HTB[Medium].md",
     "NINEVEH",
     "Sin título.md",
-    "README.md",
     "img/Pasted image 20260423181116.png",
     "img/Pasted image 20260423180737.png",
     "img/Pasted image 20260423175849.png",

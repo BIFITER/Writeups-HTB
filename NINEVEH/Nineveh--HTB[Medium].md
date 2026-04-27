@@ -102,7 +102,7 @@ Mediante una pequeña trampa podemos saber que el usuario que acepta te indica s
 ![](/img/Pasted%20image%2020260423183028.png) 
 
 
-Así que haciendo fuerza bruta al login intentaremos averiguar la contraseña
+Así que haciendo fuerza bruta al login averiguamos la contraseña
 ```bash
 hydra -l none -P /usr/share/wordlists/rockyou.txt 10.129.23.159  http-post-form
 ``` 
@@ -118,7 +118,7 @@ Al darle al apartado Notes vemos que hace una petición a un fichero desde una r
 ![](/img/Pasted%20image%2020260423183352.png) 
 
 
-Ya que sabíamos donde está la base de datos porque lo podíamos ver desde el phpLite procederemos a poner dicho directorio más el nombre de la base de datos. Ejecutamos el exploit y veremos que correctamente nos ha funcionado porque nos muestra poniendo el comando ls una lista de ficheros. Ahora haré los pasos conseguir una reverse shell en nuestro sistema.
+Ya que sabíamos donde está la base de datos porque lo podíamos ver desde phpLite procederemos a poner dicho directorio más el nombre de la base de datos. Ejecutamos el exploit añadiendo la línea de cmd con cualquier comando y veremos que correctamente nos ha funcionado porque nos muestra poniendo ls la lista de ficheros. Ahora haré los pasos conseguir una reverse shell en nuestro sistema.
   ![](/img/Pasted%20image%2020260423190738.png)
 
 Recibo la petición mediante burpsuite y cambiamos el método de esta a POST
