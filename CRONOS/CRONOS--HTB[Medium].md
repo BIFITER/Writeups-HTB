@@ -21,7 +21,7 @@ nano /etc/hosts
 cronos.htb
 ```
 
-Hacemos fuerza bruta para buscar posibles vulnerabilidades y lo que encontramos no nos sirve.
+Hacemos fuerza bruta para buscar posibles vulnerabilidades y lo que encontramos no nos sirve
 ```bash
 gobuster dir --url http://cronos.htb/ --wordlist /usr/share/wordlists/DirectoryDiscovery/common.txt
 
@@ -37,7 +37,7 @@ server-status        (Status: 403) [Size: 298]
 web.config           (Status: 200) [Size: 914]
 ```
 
-Con lo que usaremos dig para hacer una transferencia de zona DNS, así descubriremos que tiene un subdominio que es admin.cronos.htb.
+Con lo que usaremos dig para hacer una transferencia de zona DNS, así descubriremos que tiene un subdominio que es admin.cronos.htb
 ```bash
 dig axfr @cronos.htb cronos.htb / dig axfr @10.129.23.8 cronos.htb
 ; <<>> DiG 9.20.22-1-Debian <<>> axfr @10.129.23.8 cronos.htb
@@ -96,7 +96,7 @@ En mi caso he usado penelope para obtener la shell full interactiva, ya tenemos 
 ![UserTXT.png](/img/UserTXT.png)
 
 Me crearé un servidor web para descargar en la máquina victima linpeas y proceder a enumerar.
-En la enumeración vemos algo muy interesante en los cronjobs y es que el fichero /var/www/laravel/artisan tenemos todos los permisos
+En la enumeración vemos algo muy interesante en los cronjobs y es que el fichero /var/www/laravel/artisan en el cual tenemos todos los permisos
 
 ![EscaladaPrivs.png](/img/EscaladaPrivs.png) 
 ```bash
@@ -109,6 +109,6 @@ Para la escalada de privilegios cambiaremos el fichero php por una reverse shell
 
 ![EscaladaPrivs1.png](/img/EscaladaPrivs1.png)
 
-Ahora debemos poner en escucha a través del puerto que hemos puesto en la reverse shell y esperaremos, después de unos segundos seremos root y habremos completado la máquina.
+Ahora debemos poner en escucha a través del puerto que hemos puesto en la reverse shell y esperaremos, después de unos segundos seremos root y habremos completado la máquina con la úl
 
 ![RootTXT.png](/img/RootTXT.png)
