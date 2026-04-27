@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CRONOS/CRONOS--HTB[Medium].md",
+                "file": "NINEVEH/Nineveh--HTB[Medium].md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "CRONOS--HTB[Medium]"
+              "title": "Nineveh--HTB[Medium]"
             }
           }
         ]
@@ -196,8 +196,11 @@
   },
   "active": "da464643a3068b6e",
   "lastOpenFiles": [
-    "NINEVEH/Nineveh--HTB[Medium].md",
     "CRONOS/CRONOS--HTB[Medium].md",
+    "NINEVEH/Nineveh--HTB[Medium].md",
+    "NINEVEH",
+    "Sin título.md",
+    "NINEVEH/Nineveh--HTB[Medium].md",
     "SENSE/Sense--HTB[Easy].md",
     "SENSE/SCRIPT PYTHON AJUSTADO.md",
     "README.md",
@@ -210,7 +213,6 @@
     "img/Pasted image 20260423175008.png",
     "img/Pasted image 20260423174757.png",
     "img/Pasted image 20260423174644.png",
-    "NINEVEH/Sin título.md",
     "img/Rev_Shell1.png",
     "img",
     "img",
