@@ -46,14 +46,14 @@ gobuster dir --url http://10.129.23.159/ --wordlist /usr/share/wordlists/dirbust
 
 ![](/img/Pasted%20image%2020260423182723.png)
 #### Enumeración HTTPS 
-Ahora procederemos a hacer fuzzing al puerto 443 y descubrimos el directorio /db
+Ahora procederemos a hacer fuzzing al puerto 443 y descubrimos el directorio /db que da a entender que es una base de datos que nos puede servir como ataque.
 ```bash 
 gobuster dir --url https://10.129.23.159/ --wordlist /usr/share/wordlists/DirectoryDiscovery/common.txt --no-tls-validation
 ```
 
 ![](/img/Pasted%20image%2020260423175642.png) 
 
-Al comprobarlo podemos ver que es un login del software phpLiteAdmin v1.9 
+Al comprobarlo podemos ver que es un login del software phpLiteAdmin v1.9 que es para base de datos
 ![](/img/Pasted%20image%2020260423175747.png) 
 
 ## Explotación
