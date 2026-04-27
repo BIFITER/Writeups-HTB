@@ -1,5 +1,5 @@
 ### Enumeración y escaneo
-Empezaremos haciendo un escaneo de puertos y veremos http, un dominio dns y el ssh
+Empezaremos haciendo un escaneo de puertos y vemos los puertos http, dns y ssh abiertos
 ```bash
 sudo nmap -sS -Pn -p- -T4 --min-rate 5000 10.129.23.8
 
