@@ -34,7 +34,7 @@ gobuster dir --url http://10.129.23.159/ --wordlist /usr/share/wordlists/Directo
 ```
 ![](/img/Pasted%20image%2020260423175008.png) 
 
-En cambio al ampliar la enumeración con un diccionario más grande podemos descubrir un directorio que se llama department
+Supuse que podía haber rutas ocultas en el servidor web, al ampliar la enumeración con un diccionario más grande podemos descubrir un directorio que se llama department que sugería una funcionalidad interna.
 ```bash
 gobuster dir --url http://10.129.23.159/ --wordlist /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt --no-tls-validation 
 
