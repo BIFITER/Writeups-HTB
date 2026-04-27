@@ -8,7 +8,7 @@ sudo nmap -sS -Pn -p- -T4 --min-rate 5000 10.129.23.8
 80/tcp open  http
 ```
 
-Usaremos nslookup para saber hacía que dominio apunta la dirección IP
+Usaré nslookup para saber hacía que dominio apunta la dirección IP
 ```bash
 nslookup host [server]
 nslookup 10.129.23.8 10.129.23.8
@@ -37,7 +37,7 @@ server-status        (Status: 403) [Size: 298]
 web.config           (Status: 200) [Size: 914]
 ```
 
-Con lo que usaremos dig para hacer una transferencia de zona DNS, así descubriremos que tiene un subdominio que es admin.cronos.htb
+Con lo que usarando dig para hacer una transferencia de zona DNS, descubriremos que tiene un subdominio que es admin.cronos.htb
 ```bash
 dig axfr @cronos.htb cronos.htb / dig axfr @10.129.23.8 cronos.htb
 ; <<>> DiG 9.20.22-1-Debian <<>> axfr @10.129.23.8 cronos.htb
@@ -95,7 +95,7 @@ En mi caso he usado penelope para obtener la shell full interactiva, ya tenemos 
 
 ![UserTXT.png](/img/UserTXT.png)
 
-Me crearé un servidor web para descargar en la máquina victima linpeas y proceder a enumerar el sistema. En la enumeración vemos algo muy interesante en los cronjobs y es que el fichero /var/www/laravel/artisan tenemos todos los permisos 
+Me crearé un servidor web para descargar en la máquina víctima linpeas y proceder a enumerar el sistema. En la enumeración vemos algo muy interesante en los cronjobs y es que el fichero /var/www/laravel/artisan tenemos todos los permisos 
 
 ![EscaladaPrivs.png](/img/EscaladaPrivs.png) 
 ```bash
