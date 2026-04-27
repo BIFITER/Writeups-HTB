@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "9d2a3dc07a5b81a8",
+        "id": "ce0bd1f65678623f",
         "type": "tabs",
         "children": [
           {
-            "id": "d2e12d55d0a9e073",
+            "id": "63a934093048be7d",
             "type": "leaf",
             "state": {
               "type": "split-diff-view",
               "state": {
-                "aFile": "NINEVEH/Nineveh--HTB[Medium].md",
-                "bFile": "NINEVEH/Nineveh--HTB[Medium].md",
+                "aFile": ".obsidian/workspace.json",
+                "bFile": ".obsidian/workspace.json",
                 "aRef": ""
               },
               "icon": "diff",
-              "title": "Diff: Nineveh--HTB[Medium]  (Working Tree)"
+              "title": "Diff: workspace.json  (Working Tree)"
             }
           }
         ]
@@ -194,8 +194,17 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "a5b04feb9079eb08",
+  "active": "63a934093048be7d",
   "lastOpenFiles": [
+    "img/Pasted image 20260423181116.png",
+    "img/Pasted image 20260423180737.png",
+    "img/Pasted image 20260423175849.png",
+    "img/Pasted image 20260423175747.png",
+    "img/Pasted image 20260423175642.png",
+    "img/Pasted image 20260423175051.png",
+    "img/Pasted image 20260423175008.png",
+    "img/Pasted image 20260423174757.png",
+    "img/Pasted image 20260423174644.png",
     "NINEVEH/Sin título.md",
     "CRONOS/CRONOS--HTB[Medium].md",
     "NINEVEH/Nineveh--HTB[Medium].md",
@@ -203,22 +212,14 @@
     "SENSE/Sense--HTB[Easy].md",
     "img/Rev_Shell1.png",
     "img/Vulnerabilidad1.png",
-    "img/Burpsuite1.png",
     "img",
     "SENSE/SCRIPT PYTHON AJUSTADO.md",
     "img",
     "Sense--HTB[Easy.md",
     "conflict-files-obsidian-git.md",
-    "img/Pasted image 20260424162705.png",
     "NINEVEH",
-    "img/Pasted image 20260424183920.png",
     "SENSE",
     "CRONOS",
-    "img/Pasted image 20260424180446.png",
-    "img/Pasted image 20260424173406.png",
-    "img/Pasted image 20260424173202.png",
-    "img/Pasted image 20260424173143.png",
-    "img/Pasted image 20260424162024.png",
     "img",
     "Pasted.md",
     "Sin título.base",
