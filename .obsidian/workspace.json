@@ -11,10 +11,14 @@
             "id": "da464643a3068b6e",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "CRONOS/CRONOS--HTB[Medium].md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "Nueva pestaña"
+              "title": "CRONOS--HTB[Medium]"
             }
           }
         ]
@@ -190,8 +194,13 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "883f3b2b49ea67dd",
+  "active": "a5b04feb9079eb08",
   "lastOpenFiles": [
+    "CRONOS/CRONOS--HTB[Medium].md",
+    "SENSE/Sense--HTB[Easy].md",
+    "SENSE/SCRIPT PYTHON AJUSTADO.md",
+    "NINEVEH/Nineveh--HTB[Medium].md",
+    "README.md",
     "img/Pasted image 20260423181116.png",
     "img/Pasted image 20260423180737.png",
     "img/Pasted image 20260423175849.png",
@@ -202,14 +211,8 @@
     "img/Pasted image 20260423174757.png",
     "img/Pasted image 20260423174644.png",
     "NINEVEH/Sin título.md",
-    "CRONOS/CRONOS--HTB[Medium].md",
-    "NINEVEH/Nineveh--HTB[Medium].md",
-    "README.md",
-    "SENSE/Sense--HTB[Easy].md",
     "img/Rev_Shell1.png",
-    "img/Vulnerabilidad1.png",
     "img",
-    "SENSE/SCRIPT PYTHON AJUSTADO.md",
     "img",
     "Sense--HTB[Easy.md",
     "conflict-files-obsidian-git.md",
