@@ -111,12 +111,12 @@ Una vez dentro con las credenciales sacadas buscaremos posibles vectores de ataq
 
 ![](/img/Pasted%20image%2020260423183250.png) 
 
-Al darle al apartado Notes veremos que tenemos una vulnerabilidad de LFI la cuál explotaremos para escuchar el payload previamente creado en la base de datos
+Al darle al apartado Notes vemos que hace una petición a un fichero desde una ruta lo que apunta a  una vulnerabilidad de LFI la cuál explotaremos para escuchar el payload previamente creado en la base de datos
 
 ![](/img/Pasted%20image%2020260423183352.png) 
 
 
-Ya que sabíamos previamente donde está la base de datos porque lo podíamos ver desde el phpLite procederemos poner dicho directorio.  Y ejecutamos el exploit y veremos que correctamente nos ha funcionado. Ahora haré los pasos conseguir una reverse shell en nuestro sistema.
+Ya que sabíamos donde está la base de datos porque lo podíamos ver desde el phpLite procederemos a poner dicho directorio más el nombre de la base de datos. Ejecutamos el exploit y veremos que correctamente nos ha funcionado porque nos muestra poniendo el comando ls una lista de ficheros. Ahora haré los pasos conseguir una reverse shell en nuestro sistema.
   ![](/img/Pasted%20image%2020260423190738.png)
 
 Pillamos la petición mediante burpsuite y cambiamos el método de esta a POST
