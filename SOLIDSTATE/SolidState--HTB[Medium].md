@@ -16,5 +16,5 @@ sudo nmap -sS -Pn -p- -T4 --min-rate 5000 10.129.25.254
 Dado que no es mucha información procedo a hacer un escaneo de versión para mejor entendimiento de los puertos. 
 
 ```bash
-sudo nmap -sCV -p22,25,80,110,119,4555 10.129.25.254
+sudo nmap -sV -p22,25,80,110,119,4555 10.129.25.254
 ``` 
