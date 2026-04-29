@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CRONOS/CRONOS--HTB[Medium].md",
+                "file": "NODE/Node--HTB[Medium].md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "CRONOS--HTB[Medium]"
+              "title": "Node--HTB[Medium]"
             }
           }
         ]
@@ -194,16 +194,21 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "883f3b2b49ea67dd",
+  "active": "da464643a3068b6e",
   "lastOpenFiles": [
+    "NINEVEH/Nineveh--HTB[Medium].md",
+    "NODE/Node--HTB[Medium].md",
+    "Pasted image 20260429151353.png",
+    "Pasted image 20260429151208.png",
+    "Pasted image 20260429150953.png",
+    "CRONOS/CRONOS--HTB[Medium].md",
+    "NODE",
     "SENSE/Sense--HTB[Easy].md",
     "SOLIDSTATE/SolidState--HTB[Medium].md",
     "Pasted image 20260428172231.png",
-    "NINEVEH/Nineveh--HTB[Medium].md",
     "SENSE/SCRIPT PYTHON AJUSTADO.md",
     "README.md",
     "SOLIDSTATE",
-    "CRONOS/CRONOS--HTB[Medium].md",
     "NINEVEH",
     "Sin título.md",
     "img/Pasted image 20260423181116.png",
@@ -212,9 +217,6 @@
     "img/Pasted image 20260423175747.png",
     "img/Pasted image 20260423175642.png",
     "img/Pasted image 20260423175051.png",
-    "img/Pasted image 20260423175008.png",
-    "img/Pasted image 20260423174757.png",
-    "img/Pasted image 20260423174644.png",
     "img",
     "img",
     "Sense--HTB[Easy.md",
