@@ -24,3 +24,9 @@ Comprobamos la ip en la web y efectivamente estamos ante una aplicación, la cua
 ![](Pasted%20image%2020260429151353.png) 
 
 
+Al hacer un gobuster simple nos dará error ya que según que frontend trabaje redirige todo al index.html con lo que hay que ajustarlo para evitar eso y poder hacer la enumeración correctamente.
+
+![](Pasted%20image%2020260429152830.png) 
+
+
+
