@@ -131,3 +131,8 @@ Recordando el fichero app.js encontrábamos una key para los backups, el cuál s
 
 ![](Pasted%20image%2020260429165007.png) 
 
+Investigando el código de backup en mi máquina con ghidra 
+
+```bash
+scp mark@10.129.26.133:/usr/local/bin/backup ./
+```
