@@ -2,12 +2,12 @@
 Node es una máquina de nivel Medium la cual está centrada en explotar un servicio web de Node.js. Podemos encontrar mediante los scripts de javascript que hay un directorio que filtra las credenciales del administrador. A partir de aquí se descarga una copia de seguridad que tiene la información de logeo de un usuario en ssh. Mediante esto se puede acceder a una base de datos de MongoDB la cuál permite crear una shell como el usuario Tom y escalar privilegios. Para finalizar la escalada de privilegios tendremos que analizar el código interno de un binario con permisos SUID mediante una vulnerabilidad.
 
 ### Herramientas
- --Nmap
- --Gobuster
-  --Herramientas desarrollador Mozilla
- --Crackstation
- --Fcrackzip
- --Ghidra
+ - Nmap
+ - Gobuster
+  - Herramientas desarrollador Mozilla
+ - Crackstation
+ - Fcrackzip
+ - Ghidra
 ## Escaneo y enumeración
 
 Hacemos un escaneo rápido de puertos TCP con nmap, vemos el puerto 22 y 3000 abiertos
@@ -85,7 +85,7 @@ fcrackzip -D -p /usr/share/wordlists/rockyou.txt -u backupNice
 ![](/img/Pasted%20image%2020260429161910.png)
 
 
-Ponemos al contraseña y se habrá descomprimido correctamente todo el contenido, ahora debemos investigar y encontrar alguna información de valor
+Ponemos la contraseña y se habrá descomprimido correctamente todo el contenido, ahora debemos investigar y encontrar alguna información de valor
 
 ![](/img/Pasted%20image%2020260429162205.png) 
 
@@ -107,7 +107,7 @@ Investigando los procesos que hay activos podemos ver un servicio que está sien
 ![](/img/Pasted%20image%2020260429162948.png)
 
 ## Escalada de privilegios Tom
-Investigando el fichero app.js, podemos observar que mark reutiliza las credenciales de mongodb para acceder a la base de datos scheduler. A la misma vez vemos que podemos ejecutar cmd con la línea exec(doc.cmd)
+En el fichero app.js que muestra en el proceso, podemos observar que mark reutiliza las credenciales de mongodb para acceder a la base de datos scheduler. A la misma vez vemos que podemos ejecutar cmd con la línea exec(doc.cmd)
 
 ![](/img/Pasted%20image%2020260429163713.png)
 

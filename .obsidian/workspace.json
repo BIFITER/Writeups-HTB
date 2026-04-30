@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "NODE/Node--HTB[Medium].md",
+                "file": "BUSQUEDA/Busqueda--HTB[Easy].md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Node--HTB[Medium]"
+              "title": "Busqueda--HTB[Easy]"
             }
           }
         ],
@@ -211,20 +211,21 @@
   },
   "active": "cfa0b39283297a77",
   "lastOpenFiles": [
-    "img/Pasted image 20260428172231.png",
     "NODE/Node--HTB[Medium].md",
-    "img/Pasted image 20260429173728.png",
-    "img/Pasted image 20260429173539.png",
-    "img/Pasted image 20260429173051.png",
-    "img/Pasted image 20260429165007.png",
-    "img/Pasted image 20260429155755.png",
-    "img/Pasted image 20260429164755.png",
-    "img/Pasted image 20260429164354.png",
-    "img/Pasted image 20260429163713.png",
-    "img/Pasted image 20260429162948.png",
-    "img/Pasted image 20260429162657.png",
-    "NINEVEH/Nineveh--HTB[Medium].md",
+    "BUSQUEDA/Busqueda--HTB[Easy].md",
+    "img/Pasted image 20260430144733.png",
+    "img/Pasted image 20260430160859.png",
+    "img/Pasted image 20260430160807.png",
+    "img/Pasted image 20260430160019.png",
+    "img/Pasted image 20260430155808.png",
+    "img/Pasted image 20260430155413.png",
+    "img/Pasted image 20260430155100.png",
+    "img/Pasted image 20260430154858.png",
+    "img/Pasted image 20260430154739.png",
+    "img/Pasted image 20260430154643.png",
     "CRONOS/CRONOS--HTB[Medium].md",
+    "BUSQUEDA",
+    "NINEVEH/Nineveh--HTB[Medium].md",
     "NODE",
     "SENSE/Sense--HTB[Easy].md",
     "SOLIDSTATE/SolidState--HTB[Medium].md",
@@ -242,7 +243,6 @@
     "CRONOS",
     "img",
     "Pasted.md",
-    "Sin título.base",
     "git view.md",
     "Sin título.canvas"
   ]
