@@ -134,7 +134,7 @@ Encontraremos una página sobre Gitea en la que además habrá un login.
 
 ![](/img/Pasted%20image%2020260430153646.png) 
 
-En los usuario podemos ver que hay dos usuario, administrator y cody previamente visto en el fichero de configuración
+En los usuario podemos ver que hay dos usuarios, administrator y cody previamente visto en el fichero de configuración
 
 ![](/img/Pasted%20image%2020260430153936.png) 
 
