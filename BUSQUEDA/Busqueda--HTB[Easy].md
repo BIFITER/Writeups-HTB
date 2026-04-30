@@ -109,7 +109,7 @@ Lo enviamos y nuestro listener habrá obtenido exitosamente acceso al sistema y 
 ![](/img/Pasted%20image%2020260430152424.png)
 
 
-## Escala de privilegios
+## Escalada de privilegios
 
 Adentrándonos en los archivos podemos ver que tiene un directorio de git en el que hay información que puede ser valiosa
 
