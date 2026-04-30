@@ -11,10 +11,14 @@
             "id": "06980e8226221c55",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "BUSQUEDA/Busqueda--HTB[Easy].md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "Nueva pestaña"
+              "title": "Busqueda--HTB[Easy]"
             }
           }
         ]
@@ -190,7 +194,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "a5b04feb9079eb08",
+  "active": "06980e8226221c55",
   "lastOpenFiles": [
     "NODE/Node--HTB[Medium].md",
     "BUSQUEDA/Busqueda--HTB[Easy].md",

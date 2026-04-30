@@ -119,7 +119,7 @@ Viendo el fichero de configuración  podemos observar que hay un usuario y contr
 
 ![](/img/Pasted%20image%2020260430153049.png)
 
-Use la contraseña en el sistema con el propio usuario svc y fue válido, reutilizaron la contraseña con lo que tendremos un acceso al sistema más estable, además de pode ver los comandos que podemos usar como root que nos servirá par escalar privilegios
+Use la contraseña en el sistema con el propio usuario svc y fue válido, reutilizaron la contraseña con lo que tendremos un acceso al sistema más estable, además de poder ver los comandos que podemos usar como root que nos servirá par escalar privilegios
 
 ![](/img/Pasted%20image%2020260430153303.png) 
 
