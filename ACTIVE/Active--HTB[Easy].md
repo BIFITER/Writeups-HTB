@@ -53,7 +53,7 @@ Después de buscar entre los archivos encontramos un fichero xml "Groups.xml" en
 
 ## Explotación 
 
-Investigando sobre las contraseñas que maneja Windows 2008 Server sabemos que en esa versión se introdujo Group Policy Preferences, así que extraeremos la contraseña usando gpp-decrypt para este tipo de credenciales. Y de esta forma tendremos las credenciales exitosamente del usuario active.htb
+Investigando sobre las contraseñas que maneja Windows 2008 Server sabemos que en esa versión se introdujo Group Policy Preferences, así que extraeremos la contraseña usando gpp-decrypt para este tipo de credenciales. Y de esta forma tendremos las credenciales exitosamente del usuario SVC_TGS
 
 ```bash
 gpp-decrypt edBSHOwhZLTjt/QS9FeIcJ83mjWA98gw9guKOhJOdcqh+ZGMeXOsQbCpZ3xUjTLfCuNH8pG5aSVYdYw/NglVmQ
