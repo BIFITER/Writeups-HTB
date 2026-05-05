@@ -47,7 +47,7 @@ Intentando listar los archivos compartidos como anónimo no tendremos permisos
 
 ![](/img/Pasted%20image%2020260505164246.png)
 
-Ahora procederé a hacer fuerza bruta con la aplicación kerbrute (https://kerbrute.com/#Installation) para poder encontrar usuarios que se encuentren en el dominio con el siguiente diccionario de Usuarios (https://github.com/danielmiessler/seclists). Haciendo fuerza bruta encontraremos que existe el usuario fsmith, el cuál concide con los nombre del equipo visto en la web
+Ahora procederé a hacer fuerza bruta con la aplicación kerbrute (https://kerbrute.com/#Installation) para poder encontrar usuarios que se encuentren en el dominio con el siguiente diccionario de Usuarios (https://github.com/danielmiessler/seclists). Haciendo fuerza bruta encontraremos que existe el usuario fsmith, el cuál concide con los nombres del equipo visto en la web
 
 ```bash
 apt -y install seclists
@@ -128,7 +128,7 @@ Ahora procederemos a iniciar bloodhound para visualizar como está organizado el
 bloodhound-python -u svc_loanmgr -p Moneymakestheworldgoround! -d EGOTISTICAL-BANK.LOCAL -ns 10.129.29.44 -c All
 ``` 
 
-Iniciamos la base de datos de neo4j, cambiamos su contraseña y luego iniciamos desde la terminal bloodhound, importaremos los json en un archivo zip y en los nodos del usuario svc_loanmgr elegiremos Outboudn Object Control y veremos que tiene acceso a GetChanges y GetChangesAll para conseguir elevar privilegios
+Iniciamos la base de datos de neo4j, cambiamos su contraseña y luego iniciamos desde la terminal bloodhound, importaremos los json en un archivo zip y en los nodos del usuario svc_loanmgr elegiremos Outbound Object Control y veremos que tiene acceso a GetChanges y GetChangesAll para conseguir elevar privilegios
 
 ```bash
  $ bloodhound
