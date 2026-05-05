@@ -35,6 +35,9 @@ Intentando listar los archivos compartidos como anónimo no tendremos permisos
 
 ![](Pasted%20image%2020260505164246.png)
 
+Ahora procederé a hacer fuerza bruta con la aplicación kerbrute (https://kerbrute.com/#Installation) para poder encontrar usuarios que se encuentren en el dominio
+
+
 ## Explotación
 
 
