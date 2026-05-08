@@ -149,7 +149,21 @@ Volviendo atrás mirando el fichero bat indicará que ejecuta CascAudit.exe con 
 
 Para decompilarlo usaremos esta aplicación https://github.com/dnSpy/dnSpy/releases, más usando wine para que funcione en linux. Allí abriremos el fichero .exe
 
+>[!Disclaimer] 
+>Si no funciona dnSpy al importar el fichero, probad a cambiar la configuración de wine poniéndolo en Windows 2008 R2 correspondiente a la máquina, con el siguiente comando:
+>winecfg
+> 
+
 ```bash
  unzip dnSpy-net-win64.zip
  wine dnSpy.exe
 ```
+
+![](Pasted%20image%2020260508181151.png) 
+
+
+La clave del código está aquí, donde usa una clave encriptada la cuál servirá para conseguir la contraseña
+
+![](Pasted%20image%2020260508181514.png)
+
+
