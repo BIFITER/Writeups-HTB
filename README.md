@@ -8,7 +8,7 @@ Cualquier sugerencia o contacto puedes hacerlo a través de mi perfil de LinkedI
 
 Estoy comenzando a desarrollar _writeups_ de forma estructurada, con el objetivo de mejorar tanto mis habilidades técnicas como mi capacidad para documentar y comunicar procesos complejos. Aquí no solo encontrarás soluciones, sino también mi forma de pensar, los errores que cometo y cómo los corrijo, ya que considero que esa es una parte clave del aprendizaje.
 
-Actualmente estoy siguiendo una ruta de máquinas propuesta por S4vitar ([https://docs.google.com/spreadsheets/d/1-g6fj_vb3g3E4DCnOmRfexBQtTv2zZaJgHiD4g6288U/edit?gid=0#gid=0](https://docs.google.com/spreadsheets/d/1-g6fj_vb3g3E4DCnOmRfexBQtTv2zZaJgHiD4g6288U/edit?gid=0#gid=0)), orientada a la preparación de la OSCP, por lo que este repositorio comienza documentando dichas máquinas pese a tener hechas previamente más.
+Actualmente estoy siguiendo una ruta de máquinas ([https://docs.google.com/spreadsheets/u/1/d/1dwSMIAPIam0PuRBkCiDI88pU3yzrqqHkDtBngUHNCw8/htmlview](https://docs.google.com/spreadsheets/d/1-g6fj_vb3g3E4DCnOmRfexBQtTv2zZaJgHiD4g6288U/edit?gid=0#gid=0)), orientada a la preparación de la OSCP, por lo que este repositorio comienza documentando dichas máquinas pese a tener hechas previamente más.
 
 ## 🎓 Formación
 
