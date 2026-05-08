@@ -167,3 +167,8 @@ La clave del código está aquí, donde usa una clave encriptada la cuál servir
 ![](Pasted%20image%2020260508181514.png)
 
 
+Podemos ver en un fichero CascCrypto de la froma que está encondeado 
+
+![](Pasted%20image%2020260508182158.png)
+
+
