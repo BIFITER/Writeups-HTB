@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "RETURN/Return--HTB[Easy].md",
+                "file": "NODE/Node--HTB[Medium].md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Return--HTB[Easy]"
+              "title": "Node--HTB[Medium]"
             }
           }
         ]
@@ -196,9 +196,9 @@
   },
   "active": "06980e8226221c55",
   "lastOpenFiles": [
+    "RETURN/Return--HTB[Easy].md",
     "TIMELAPSE/Timelapse--HTB[Easy].md",
     "img/Pasted image 20260507152904.png",
-    "RETURN/Return--HTB[Easy].md",
     "img/Pasted image 20260507161618.png",
     "img/Pasted image 20260507161520.png",
     "img/Pasted image 20260507161234.png",
