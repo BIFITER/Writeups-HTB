@@ -85,8 +85,66 @@ Por último en el fichero VNC Install.reg de s.smith sobre el software TightVNC,
 
 ![](Pasted%20image%2020260508170349.png)
 
+Para descifrar la contraseña usaremos xxd para revertir a binario el contenido, para ello usaremos la flag -r 
 
+```bash
+echo '6bcf2a4b6e5aca0f' | xxd -r -p > vnc_contraseña
+```
+
+Buscando en internet he dado con esta herramienta https://github.com/jeroennijhof/vncpwd la cuál nos podrá desencriptar la contraseña. La ejecutamos y nos sacará la contraseña de s.smith
+
+![](Pasted%20image%2020260508172118.png)
+
+Probando las credenciales con evil-winrm nos dará acceso al sistema exitosamente como s.smith y conseguiremos la primera flag de la máquina
+
+![](Pasted%20image%2020260508172231.png)
+
+![](Pasted%20image%2020260508172331.png)
 
 
 ## Escalado de privilegios
+
+Viendo las información del usuario podemos ver que está en un grupo que se llama Audit Share que no suele ser típico
+
+
+![](Pasted%20image%2020260508172532.png) 
+
+
+Vemos que el único miembro es él, también en el grupo de IT vemos otros usuarios ya vistos 
+
+![](Pasted%20image%2020260508172639.png) 
+
+Así que veré a que tengo acceso en SMB con el usuario s.smith ya que tenemos las credenciales. Aquí podemos ver el acceso a Audit$ que viene en la información del grupo Audit Share. Así que le echaremos un vistazo
+
+```bash
+smbmap -u s.smith -p sT333ve2 -H 10.129.30.166
+```
+
+![](Pasted%20image%2020260508172853.png) 
+
+De la misma forma descargaremos todo lo que hay allí para sacar información importante
+
+```bash
+smbclient //10.129.30.166/Audit$ -U s.smith%sT333ve2
+```
+
+![](Pasted%20image%2020260508173516.png)
+
+Dentro del directorio DB podemos ver un fichero el cuál es para SQLite 3.x
+
+![](Pasted%20image%2020260508173825.png)
+
+Mirando la información de las tablas vemos información del usuario ArkSvc, que intentando decodificar en base64 no sacaremos nada
+
+![](Pasted%20image%2020260508174159.png)
+
+![](Pasted%20image%2020260508174255.png)
+
+Volviendo atrás mirando el fichero bat indicará que ejecuta CascAudit.exe con el fichero Audit.db visto ahora. Viendo CascAutit.exe se ve que es un ejecutable .net
+
+![](Pasted%20image%2020260508174701.png)
+
+
+![](Pasted%20image%2020260508174806.png)
+
 
