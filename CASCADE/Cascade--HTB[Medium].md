@@ -147,4 +147,9 @@ Volviendo atrás mirando el fichero bat indicará que ejecuta CascAudit.exe con 
 
 ![](Pasted%20image%2020260508174806.png)
 
+Para decompilarlo usaremos esta aplicación https://github.com/dnSpy/dnSpy/releases, más usando wine para que funcione en linux. Allí abriremos el fichero .exe
 
+```bash
+ unzip dnSpy-net-win64.zip
+ wine dnSpy.exe
+```
