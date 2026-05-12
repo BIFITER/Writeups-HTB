@@ -113,5 +113,12 @@ Buscando información sobre la versión del software visto antes la 1.0.2 con se
 
 ![](Pasted%20image%2020260512172026.png)
 
+Ya que estamos autenticados probaré a usar el siguiente https://www.exploit-db.com/exploits/41200, para usarlo debemos crear un ticket nuevo, rellenamos todos los campos obligatorios como sea y añadir una imagen a la opción de attachments, una vez rellenado todo lo entregramos
+
+![](Pasted%20image%2020260512173508.png)
+
+
+
+
 ## Escalado de privilegios
 
