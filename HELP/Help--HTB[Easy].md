@@ -73,8 +73,45 @@ Buscando en internet vemos que Express suele usar graphql para las query, las cu
 ![](Pasted%20image%2020260512170433.png)
 
 
+Podemos hacerle una petición intentando pedir el usuario, nos dará error y nos dice que user tiene subcampos que debemos seleccionar, así que vamos a probarlos
+```bash
+ curl -s -G http://help.htb:3000/graphql --data-urlencode "query={user}" | jq
+```
+
+![](Pasted%20image%2020260512171144.png)
+
+Probé con user, pero me dijo que no existía, si quería decir username y al probarlo con username nos dará un correo, ahora probaremos si hay algún tipo de contraseña
+
+```bash
+curl -s -G http://help.htb:3000/graphql --data-urlencode "query={user { username }}" | jq
+```
+
+![](Pasted%20image%2020260512171306.png)
+
+Al igual que antes, probando pass nos dirá si queríamos poner password, poniéndolo nos saldrá una contraseña encodeada.
+
+```bash
+curl -s -G http://help.htb:3000/graphql --data-urlencode "query={user { password }}" | jq
+```
+
+![](Pasted%20image%2020260512171442.png)
+
+
+En la página https://crackstation.net/ crackearemos la contraseña encodeada en md5, el resultado saldrá "godhelpmeplz"
+
+
+![](Pasted%20image%2020260512171623.png) 
+
+
 ## Explotación
 
+Una vez sabemos esas credenciales vamos probar a usarlas en el puerto 80 en el cuál teníamos el software Help Desk. Y habremos conseguido acceso exitosamente
+
+![](Pasted%20image%2020260512171910.png)
+
+Buscando información sobre la versión del software visto antes la 1.0.2 con searchsploit veremos que hay disponibles 2 exploits
+
+![](Pasted%20image%2020260512172026.png)
 
 ## Escalado de privilegios
 
