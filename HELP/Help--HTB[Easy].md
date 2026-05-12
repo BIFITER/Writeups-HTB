@@ -117,6 +117,25 @@ Ya que estamos autenticados probaré a usar el siguiente https://www.exploit-db.
 
 ![](Pasted%20image%2020260512173508.png)
 
+No me ha dado resultados, así que lo haré de otra forma con Burpsuite, una vez hemos hecho la petición mientras escuchamos con Burpsuite abriremos el enlace del attachment en una pestaña nueva
+
+![](Pasted%20image%2020260512174703.png)
+
+Al hacer eso nos llegará una petición hacia dónde está la imagen, como sabemos que tiene SQLi lo pasaremos por la aplicación sqlmap
+
+![](Pasted%20image%2020260512174753.png)
+
+Guardaremos la petición en un fichero y después lo usaremos con sqlmap. Al usarlo empezará a testear consultas, tras un breve tiempo dará c 
+
+
+![](Pasted%20image%2020260512174834.png)
+
+```bash
+sqlmap -r sqliHelp.txt --dump
+```
+
+
+
 
 
 
