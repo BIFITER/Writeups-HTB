@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "HELP/Help--HTB[Easy].md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "Help--HTB[Easy]"
             }
           }
         ]
@@ -196,18 +196,22 @@
   },
   "active": "06980e8226221c55",
   "lastOpenFiles": [
+    "Pasted image 20260512164535.png",
+    "Pasted image 20260512164156.png",
+    "Pasted image 20260512164039.png",
+    "Pasted image 20260512164025.png",
+    "Pasted image 20260512163922.png",
+    "Pasted image 20260512163713.png",
+    "Pasted image 20260512163639.png",
+    "Pasted image 20260512163545.png",
+    "README.md",
+    "HELP/Help--HTB[Easy].md",
+    "HELP",
     "CASCADE/Cascade--HTB[Medium].md",
     "TIMELAPSE/Timelapse--HTB[Easy].md",
     "img/Pasted image 20260508161647.png",
     "img/Pasted image 20260508193559.png",
     "img/Pasted image 20260508193322.png",
-    "img/Pasted image 20260508193215.png",
-    "img/Pasted image 20260508192822.png",
-    "img/Pasted image 20260508192422.png",
-    "img/Pasted image 20260508192329.png",
-    "img/Pasted image 20260508192250.png",
-    "img/Pasted image 20260508182158.png",
-    "img/Pasted image 20260508181514.png",
     "ACTIVE/Active--HTB[Easy].md",
     "NODE/Node--HTB[Medium].md",
     "CASCADE",
@@ -216,7 +220,6 @@
     "RETURN",
     "BUSQUEDA/Busqueda--HTB[Easy].md",
     "CRONOS/CRONOS--HTB[Medium].md",
-    "README.md",
     "TIMELAPSE",
     "SAUNA",
     "ACTIVE",
@@ -229,7 +232,6 @@
     "SENSE/SCRIPT PYTHON AJUSTADO.md",
     "SOLIDSTATE",
     "NINEVEH",
-    "img",
     "Sense--HTB[Easy.md",
     "conflict-files-obsidian-git.md",
     "Pasted.md",
