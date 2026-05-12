@@ -47,14 +47,30 @@ gobuster dir --url http://help.htb/ --wordlist /usr/share/wordlists/DirectoryDis
 
 
 ```bash
-gobuster dir --url http://help.htb/support/ --wordlist /usr/share/wordlists/DirectoryDiscovery/common.txt -t 50
+gobuster dir --url http://help.htb/support/ --wordlist /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -t 50 -x php,txt
 ```
 
 
-De momento no encontramos nada de valor, además de la mayoría de directorios nos redireccionan a el index principal, así que pasaremos a investigar el puerto 3000
-![](Pasted%20image%2020260512164156.png)
+
+
+
+![](Pasted%20image%2020260512165208.png)
+
+![](Pasted%20image%2020260512165527.png)
+
+
+
+### Node
 
 ![](Pasted%20image%2020260512164535.png)
+
+
+![](Pasted%20image%2020260512165657.png)
+
+
+
+
+
 ## Explotación
 
 
