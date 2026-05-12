@@ -68,7 +68,9 @@ gobuster dir --url http://help.htb/support/ --wordlist /usr/share/wordlists/dirb
 ![](Pasted%20image%2020260512165657.png)
 
 
+Buscando en internet vemos que Express suele usar graphql para las query, las cuales queremos saber, también he encontrado que el endpoint está en /graphql. Pero al ponerlo nos dice que falta la consulta 
 
+![](Pasted%20image%2020260512170433.png)
 
 
 ## Explotación
