@@ -5,23 +5,26 @@ Help es un sistema Easy Linux con un punto final GraphQL que permite obtener cre
 ### Herramientas
 
 
+
 ## Enumeración
 
+Realizaremos un escaneo de puertos rápido hacía la máquina
 ```bash
 sudo nmap -sS -Pn -p- -T4 --min-rate 5000 10.129.32.141
 ```
 
-![](Pasted%20image%2020260512163545.png)
+![](/img/Pasted%20image%2020260512163545.png)
 
+Seguidamente haremos el escaneo de versiones a los puertos que hemos encontrado. Al comprobar el puerto 80 nos redirigirá a un dns llamado help.htb
 ```bash
 sudo nmap -sCV -p22,80,3000 10.129.32.141
 ```
 
-![](Pasted%20image%2020260512163639.png)
+![](/img/Pasted%20image%2020260512163639.png)
 
-![](Pasted%20image%2020260512163713.png)
+![](/img/Pasted%20image%2020260512163713.png)
 
-Añadimos la línea en el fichero hosts
+Añadimos la línea en el fichero hosts para tener acceso
 
 ```bash
 sudo nano /etc/hosts
@@ -29,41 +32,41 @@ sudo nano /etc/hosts
 10.129.32.141   help.htb
 ```
 
+Allí vemos que es una página Apache default
+![](/img/Pasted%20image%2020260512163922.png)
 
-![](Pasted%20image%2020260512163922.png)
-
-
+Así que haremos fuzzin por si encontramos algun directorio interesante, podemos encontrar support en el que tenemos acceso
 
 ```bash
 gobuster dir --url http://help.htb/ --wordlist /usr/share/wordlists/DirectoryDiscovery/common.txt -t 50
 ```
 
 
-![](Pasted%20image%2020260512164025.png)
+![](/img/Pasted%20image%2020260512164025.png)
 
 
+Al entrar veremos una página web con el software HelpDeskZ
 
-![](Pasted%20image%2020260512164039.png)
+![](/img/Pasted%20image%2020260512164039.png)
 
-
+Por lo tanto haremos fuzzing de nuevo al presente directorio, para encontrar ficheros y más caminos donde encontrar información. Allí veremos un fichero UPGRADING.txt
 ```bash
 gobuster dir --url http://help.htb/support/ --wordlist /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -t 50 -x php,txt
 ```
 
+![](/img/Pasted%20image%2020260512165527.png)
 
-
-
-
-![](Pasted%20image%2020260512165208.png)
-
-![](Pasted%20image%2020260512165527.png)
-
+Al comprobarlo nos dirá la versión del software la 1.0.2
+![](/img/Pasted%20image%2020260512165208.png)
 
 
 ### Node
 
+Al entrar en el puerto 3000 de Node nos saldrá un mensaje en formato json, que nos da una pista de que tenemos que encontrar las credenciales en una consulta
+
 ![](Pasted%20image%2020260512164535.png)
 
+Mirando la tecnología que usa podemos observar que usa Express
 
 ![](Pasted%20image%2020260512165657.png)
 
@@ -138,7 +141,30 @@ sqlmap -r sqliHelp.txt --dump
 
 ![](Pasted%20image%2020260512183932.png)
 
+Así que haciendo ssh al sistema con el usuario help estaremos dentro
+
+![](Pasted%20image%2020260512184513.png)
+
+Dentro podremos encontrar la primera flag de user.txt 
+
+![](Pasted%20image%2020260512184609.png)
 
 
 ## Escalado de privilegios
 
+Comprobando la versión de Linux que hay vemos que usa una versión de kernel antigua, la cuál investigando posibles exploits encontré este https://www.exploit-db.com/exploits/44298 
+
+
+![](Pasted%20image%2020260512185518.png)
+
+Así que debemos descargarlo e instalarlo mediante un servidor python que creemos, seguidamente compilaremos el programa y lo ejecutaremos. Por lo que terminaremos escalando privilegios como root exitosamente
+
+```bash
+gcc -o exploit 44298.c
+```
+
+![](Pasted%20image%2020260512185734.png)
+
+Para concluir leeremos la última flag de root y habremos completado al máquina
+
+![](Pasted%20image%2020260512185831.png)
