@@ -125,7 +125,8 @@ Al hacer eso nos llegará una petición hacia dónde está la imagen, como sabem
 
 ![](Pasted%20image%2020260512174753.png)
 
-Guardaremos la petición en un fichero y después lo usaremos con sqlmap. Al usarlo empezará a testear consultas, tras un breve tiempo dará c 
+Guardaremos la petición en un fichero y después lo usaremos con sqlmap. Al usarlo empezará a testear consultas, tras un breve tiempo dará una tabla llamada Staff en la que estará disponible 
+el login del admin y su contraseña, la cuál saldrá crackeada gracias a sqlmap, la cuál será "Welcome1" 
 
 
 ![](Pasted%20image%2020260512174834.png)
@@ -135,7 +136,7 @@ sqlmap -r sqliHelp.txt --dump
 ```
 
 
-
+![](Pasted%20image%2020260512183932.png)
 
 
 
