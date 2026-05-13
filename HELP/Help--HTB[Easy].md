@@ -1,10 +1,15 @@
 ## Resumen
 Help es un sistema Easy Linux con un punto final GraphQL que permite obtener credenciales para un software de soporte técnico. Este software es vulnerable a la inyección SQL ciega, la cual puede explotarse para obtener la contraseña de inicio de sesión SSH. Alternativamente, se puede explotar la carga de archivos arbitrarios sin autenticación para obtener ejecución remota de código (RCE). Posteriormente, se descubre que el kernel es vulnerable y puede explotarse para obtener acceso de superusuario (root).
 
-
 ### Herramientas
 
-
+- Nmap
+- Gobuster
+- Wappalyzer
+- Crackstation
+- Sqlmap
+- Searchsploit
+- Burpsuite
 
 ## Enumeración
 
