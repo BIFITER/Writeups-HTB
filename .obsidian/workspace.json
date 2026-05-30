@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TIMELAPSE/Timelapse--HTB[Easy].md",
+                "file": "CASCADE/Cascade--HTB[Medium].md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Timelapse--HTB[Easy]"
+              "title": "Cascade--HTB[Medium]"
             }
           }
         ]
@@ -194,8 +194,9 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "883f3b2b49ea67dd",
+  "active": "06980e8226221c55",
   "lastOpenFiles": [
+    "TIMELAPSE/Timelapse--HTB[Easy].md",
     "BUSQUEDA/Busqueda--HTB[Easy].md",
     "CASCADE/Cascade--HTB[Medium].md",
     "HELP/Help--HTB[Easy].md",
@@ -211,7 +212,6 @@
     "img/Pasted image 20260512174753.png",
     "README.md",
     "HELP",
-    "TIMELAPSE/Timelapse--HTB[Easy].md",
     "ACTIVE/Active--HTB[Easy].md",
     "NODE/Node--HTB[Medium].md",
     "CASCADE",
