@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "Get-Ch",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -74,7 +74,8 @@
               "title": "Marcadores"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -194,7 +195,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "06980e8226221c55",
+  "active": "b1949639db917528",
   "lastOpenFiles": [
     "TIMELAPSE/Timelapse--HTB[Easy].md",
     "BUSQUEDA/Busqueda--HTB[Easy].md",
